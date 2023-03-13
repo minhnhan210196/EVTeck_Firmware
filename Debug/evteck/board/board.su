@@ -1,0 +1,2 @@
+../evteck/board/board.c:11:6:board_init	4	static
+../evteck/board/board.c:14:6:board_deinit	4	static

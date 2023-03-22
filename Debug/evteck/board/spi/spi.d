@@ -29,7 +29,7 @@ evteck/board/spi/spi.o: ../evteck/board/spi/spi.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- C:/Users/MinhNhan/STM32CubeIDE/workspace_1.10.1/EVTeck/evteck/board/gpio/gpio.h
+ /Users/phamminhnhan/Documents/GitHub/EvTeckFirmware/evteck/board/gpio/gpio.h
 ../evteck/board/spi/spi.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -61,4 +61,4 @@ evteck/board/spi/spi.o: ../evteck/board/spi/spi.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
-C:/Users/MinhNhan/STM32CubeIDE/workspace_1.10.1/EVTeck/evteck/board/gpio/gpio.h:
+/Users/phamminhnhan/Documents/GitHub/EvTeckFirmware/evteck/board/gpio/gpio.h:

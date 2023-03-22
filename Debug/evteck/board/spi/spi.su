@@ -1,4 +1,6 @@
-../evteck/board/spi/spi.c:10:6:spi_init	24	static
-../evteck/board/spi/spi.c:13:6:spi_read	24	static
-../evteck/board/spi/spi.c:16:6:spi_write	24	static
-../evteck/board/spi/spi.c:19:10:spi_write_read	24	static
+../evteck/board/spi/spi.c:11:6:spi_init	24	static
+../evteck/board/spi/spi.c:15:6:spi_read	24	static
+../evteck/board/spi/spi.c:18:6:spi_write	24	static
+../evteck/board/spi/spi.c:21:10:spi_write_read	24	static
+../evteck/board/spi/spi.c:25:6:spi_cs_select	16	static
+../evteck/board/spi/spi.c:28:6:spi_cs_deselect	16	static

@@ -14,6 +14,7 @@ RM := rm -rf
 -include evteck/board/spi/subdir.mk
 -include evteck/board/gpio/subdir.mk
 -include evteck/board/subdir.mk
+-include evteck/app/subdir.mk
 -include Middlewares/Third_Party/LwIP/system/OS/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/netif/ppp/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/netif/subdir.mk
@@ -80,8 +81,8 @@ all: main-build
 main-build: EVTeck.elf secondary-outputs
 
 # Tool invocations
-EVTeck.elf EVTeck.map: $(OBJS) $(USER_OBJS) C:\Users\MinhNhan\STM32CubeIDE\workspace_1.10.1\EVTeck\STM32F407ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "EVTeck.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\MinhNhan\STM32CubeIDE\workspace_1.10.1\EVTeck\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EVTeck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+EVTeck.elf EVTeck.map: $(OBJS) $(USER_OBJS) /Users/phamminhnhan/Documents/GitHub/EvTeckFirmware/STM32F407ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "EVTeck.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/phamminhnhan/Documents/GitHub/EvTeckFirmware/STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EVTeck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

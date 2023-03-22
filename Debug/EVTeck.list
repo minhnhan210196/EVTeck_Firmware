@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  000311c2  00000000  00000000  000697c0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00031e58  00000000  00000000  0009a982  2**0
+ 18 .debug_line   00032aaf  00000000  00000000  0009a982  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000f02d2  00000000  00000000  000cc7da  2**0
+ 19 .debug_str    000f02cf  00000000  00000000  000cd431  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  001bcaac  2**0
+ 20 .comment      00000050  00000000  00000000  001bd700  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00009320  00000000  00000000  001bcafc  2**2
+ 21 .debug_frame  00009320  00000000  00000000  001bd750  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -145,8 +145,8 @@ Disassembly of section .text:
  8000276:	bf08      	it	eq
  8000278:	2800      	cmpeq	r0, #0
  800027a:	bf1c      	itt	ne
- 800027c:	f04f 31ff 	movne.w	r1, #4294967295
- 8000280:	f04f 30ff 	movne.w	r0, #4294967295
+ 800027c:	f04f 31ff 	movne.w	r1, #4294967295	; 0xffffffff
+ 8000280:	f04f 30ff 	movne.w	r0, #4294967295	; 0xffffffff
  8000284:	f000 b974 	b.w	8000570 <__aeabi_idiv0>
  8000288:	f1ad 0c08 	sub.w	ip, sp, #8
  800028c:	e96d ce04 	strd	ip, lr, [sp, #-16]!
@@ -184,7 +184,7 @@ Disassembly of section .text:
  80002ea:	4299      	cmp	r1, r3
  80002ec:	d90a      	bls.n	8000304 <__udivmoddi4+0x64>
  80002ee:	eb1c 0303 	adds.w	r3, ip, r3
- 80002f2:	f106 30ff 	add.w	r0, r6, #4294967295
+ 80002f2:	f106 30ff 	add.w	r0, r6, #4294967295	; 0xffffffff
  80002f6:	f080 811f 	bcs.w	8000538 <__udivmoddi4+0x298>
  80002fa:	4299      	cmp	r1, r3
  80002fc:	f240 811c 	bls.w	8000538 <__udivmoddi4+0x298>
@@ -199,7 +199,7 @@ Disassembly of section .text:
  8000318:	42a7      	cmp	r7, r4
  800031a:	d90a      	bls.n	8000332 <__udivmoddi4+0x92>
  800031c:	eb1c 0404 	adds.w	r4, ip, r4
- 8000320:	f100 33ff 	add.w	r3, r0, #4294967295
+ 8000320:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
  8000324:	f080 810a 	bcs.w	800053c <__udivmoddi4+0x29c>
  8000328:	42a7      	cmp	r7, r4
  800032a:	f240 8107 	bls.w	800053c <__udivmoddi4+0x29c>
@@ -255,7 +255,7 @@ Disassembly of section .text:
  80003b6:	4288      	cmp	r0, r1
  80003b8:	d908      	bls.n	80003cc <__udivmoddi4+0x12c>
  80003ba:	eb1c 0101 	adds.w	r1, ip, r1
- 80003be:	f103 38ff 	add.w	r8, r3, #4294967295
+ 80003be:	f103 38ff 	add.w	r8, r3, #4294967295	; 0xffffffff
  80003c2:	d202      	bcs.n	80003ca <__udivmoddi4+0x12a>
  80003c4:	4288      	cmp	r0, r1
  80003c6:	f200 80cb 	bhi.w	8000560 <__udivmoddi4+0x2c0>
@@ -269,7 +269,7 @@ Disassembly of section .text:
  80003e0:	45a6      	cmp	lr, r4
  80003e2:	d908      	bls.n	80003f6 <__udivmoddi4+0x156>
  80003e4:	eb1c 0404 	adds.w	r4, ip, r4
- 80003e8:	f100 31ff 	add.w	r1, r0, #4294967295
+ 80003e8:	f100 31ff 	add.w	r1, r0, #4294967295	; 0xffffffff
  80003ec:	d202      	bcs.n	80003f4 <__udivmoddi4+0x154>
  80003ee:	45a6      	cmp	lr, r4
  80003f0:	f200 80bb 	bhi.w	800056a <__udivmoddi4+0x2ca>
@@ -297,7 +297,7 @@ Disassembly of section .text:
  800043a:	fa02 f206 	lsl.w	r2, r2, r6
  800043e:	d90b      	bls.n	8000458 <__udivmoddi4+0x1b8>
  8000440:	eb1c 0101 	adds.w	r1, ip, r1
- 8000444:	f108 3aff 	add.w	sl, r8, #4294967295
+ 8000444:	f108 3aff 	add.w	sl, r8, #4294967295	; 0xffffffff
  8000448:	f080 8088 	bcs.w	800055c <__udivmoddi4+0x2bc>
  800044c:	4288      	cmp	r0, r1
  800044e:	f240 8085 	bls.w	800055c <__udivmoddi4+0x2bc>
@@ -312,7 +312,7 @@ Disassembly of section .text:
  800046c:	458e      	cmp	lr, r1
  800046e:	d908      	bls.n	8000482 <__udivmoddi4+0x1e2>
  8000470:	eb1c 0101 	adds.w	r1, ip, r1
- 8000474:	f100 34ff 	add.w	r4, r0, #4294967295
+ 8000474:	f100 34ff 	add.w	r4, r0, #4294967295	; 0xffffffff
  8000478:	d26c      	bcs.n	8000554 <__udivmoddi4+0x2b4>
  800047a:	458e      	cmp	lr, r1
  800047c:	d96a      	bls.n	8000554 <__udivmoddi4+0x2b4>
@@ -354,7 +354,7 @@ Disassembly of section .text:
  80004e8:	fa04 f402 	lsl.w	r4, r4, r2
  80004ec:	d908      	bls.n	8000500 <__udivmoddi4+0x260>
  80004ee:	eb1c 0303 	adds.w	r3, ip, r3
- 80004f2:	f100 38ff 	add.w	r8, r0, #4294967295
+ 80004f2:	f100 38ff 	add.w	r8, r0, #4294967295	; 0xffffffff
  80004f6:	d22f      	bcs.n	8000558 <__udivmoddi4+0x2b8>
  80004f8:	429e      	cmp	r6, r3
  80004fa:	d92d      	bls.n	8000558 <__udivmoddi4+0x2b8>
@@ -369,7 +369,7 @@ Disassembly of section .text:
  8000514:	428b      	cmp	r3, r1
  8000516:	d908      	bls.n	800052a <__udivmoddi4+0x28a>
  8000518:	eb1c 0101 	adds.w	r1, ip, r1
- 800051c:	f106 38ff 	add.w	r8, r6, #4294967295
+ 800051c:	f106 38ff 	add.w	r8, r6, #4294967295	; 0xffffffff
  8000520:	d216      	bcs.n	8000550 <__udivmoddi4+0x2b0>
  8000522:	428b      	cmp	r3, r1
  8000524:	d914      	bls.n	8000550 <__udivmoddi4+0x2b0>
@@ -897,7 +897,7 @@ static void MX_TIM2_Init(void)
  800080a:	609a      	str	r2, [r3, #8]
   htim2.Init.Period = 4294967295;
  800080c:	4b18      	ldr	r3, [pc, #96]	; (8000870 <MX_TIM2_Init+0x94>)
- 800080e:	f04f 32ff 	mov.w	r2, #4294967295
+ 800080e:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  8000812:	60da      	str	r2, [r3, #12]
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
  8000814:	4b16      	ldr	r3, [pc, #88]	; (8000870 <MX_TIM2_Init+0x94>)
@@ -2220,7 +2220,7 @@ int _kill(int pid, int sig)
  8000ef8:	2216      	movs	r2, #22
  8000efa:	601a      	str	r2, [r3, #0]
 	return -1;
- 8000efc:	f04f 33ff 	mov.w	r3, #4294967295
+ 8000efc:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
 }
  8000f00:	4618      	mov	r0, r3
  8000f02:	370c      	adds	r7, #12
@@ -2238,7 +2238,7 @@ void _exit (int status)
  8000f14:	af00      	add	r7, sp, #0
  8000f16:	6078      	str	r0, [r7, #4]
 	_kill(status, -1);
- 8000f18:	f04f 31ff 	mov.w	r1, #4294967295
+ 8000f18:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  8000f1c:	6878      	ldr	r0, [r7, #4]
  8000f1e:	f7ff ffe5 	bl	8000eec <_kill>
 	while (1) {}		/* Make sure we hang here */
@@ -2338,7 +2338,7 @@ int _close(int file)
  8000f9a:	af00      	add	r7, sp, #0
  8000f9c:	6078      	str	r0, [r7, #4]
 	return -1;
- 8000f9e:	f04f 33ff 	mov.w	r3, #4294967295
+ 8000f9e:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
 }
  8000fa2:	4618      	mov	r0, r3
  8000fa4:	370c      	adds	r7, #12
@@ -2458,7 +2458,7 @@ void *_sbrk(ptrdiff_t incr)
  8001032:	220c      	movs	r2, #12
  8001034:	601a      	str	r2, [r3, #0]
     return (void *)-1;
- 8001036:	f04f 33ff 	mov.w	r3, #4294967295
+ 8001036:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800103a:	e009      	b.n	8001050 <_sbrk+0x50>
   }
 
@@ -2648,7 +2648,7 @@ int32_t  DP83848_RegisterBusIO(dp83848_Object_t *pObj, dp83848_IOCtx_t *ioctx)
  800110c:	d102      	bne.n	8001114 <DP83848_RegisterBusIO+0x2e>
   {
     return DP83848_STATUS_ERROR;
- 800110e:	f04f 33ff 	mov.w	r3, #4294967295
+ 800110e:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8001112:	e014      	b.n	800113e <DP83848_RegisterBusIO+0x58>
   }
 
@@ -3272,7 +3272,7 @@ __weak void HAL_Delay(uint32_t Delay)
   /* Add a freq to guarantee minimum wait */
   if (wait < HAL_MAX_DELAY)
  800143e:	68fb      	ldr	r3, [r7, #12]
- 8001440:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8001440:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8001444:	d005      	beq.n	8001452 <HAL_Delay+0x26>
   {
     wait += (uint32_t)(uwTickFreq);
@@ -3505,7 +3505,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
 
   return (
            ((PreemptPriority & (uint32_t)((1UL << (PreemptPriorityBits)) - 1UL)) << SubPriorityBits) |
- 800159c:	f04f 32ff 	mov.w	r2, #4294967295
+ 800159c:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  80015a0:	69bb      	ldr	r3, [r7, #24]
  80015a2:	fa02 f303 	lsl.w	r3, r2, r3
  80015a6:	43da      	mvns	r2, r3
@@ -3514,7 +3514,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
  80015ac:	697b      	ldr	r3, [r7, #20]
  80015ae:	409a      	lsls	r2, r3
            ((SubPriority     & (uint32_t)((1UL << (SubPriorityBits    )) - 1UL)))
- 80015b0:	f04f 31ff 	mov.w	r1, #4294967295
+ 80015b0:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  80015b4:	697b      	ldr	r3, [r7, #20]
  80015b6:	fa01 f303 	lsl.w	r3, r1, r3
  80015ba:	43d9      	mvns	r1, r3
@@ -12130,7 +12130,7 @@ static err_t low_level_output(struct netif *netif, struct pbuf *p)
  8004696:	bf00      	nop
  8004698:	4b0b      	ldr	r3, [pc, #44]	; (80046c8 <low_level_output+0x124>)
  800469a:	681b      	ldr	r3, [r3, #0]
- 800469c:	f04f 31ff 	mov.w	r1, #4294967295
+ 800469c:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  80046a0:	4618      	mov	r0, r3
  80046a2:	f000 fbef 	bl	8004e84 <osSemaphoreWait>
  80046a6:	4603      	mov	r3, r0
@@ -12218,7 +12218,7 @@ static void ethernetif_input(void const * argument)
     if (osSemaphoreWait(RxPktSemaphore, TIME_WAITING_FOR_INPUT) == osOK)
  8004710:	4b0f      	ldr	r3, [pc, #60]	; (8004750 <ethernetif_input+0x50>)
  8004712:	681b      	ldr	r3, [r3, #0]
- 8004714:	f04f 31ff 	mov.w	r1, #4294967295
+ 8004714:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  8004718:	4618      	mov	r0, r3
  800471a:	f000 fbb3 	bl	8004e84 <osSemaphoreWait>
  800471e:	4603      	mov	r3, r0
@@ -12659,7 +12659,7 @@ int32_t ETH_PHY_IO_ReadReg(uint32_t DevAddr, uint32_t RegAddr, uint32_t *pRegVal
  800499c:	d002      	beq.n	80049a4 <ETH_PHY_IO_ReadReg+0x24>
   {
     return -1;
- 800499e:	f04f 33ff 	mov.w	r3, #4294967295
+ 800499e:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  80049a2:	e000      	b.n	80049a6 <ETH_PHY_IO_ReadReg+0x26>
   }
 
@@ -12697,7 +12697,7 @@ int32_t ETH_PHY_IO_WriteReg(uint32_t DevAddr, uint32_t RegAddr, uint32_t RegVal)
  80049d0:	d002      	beq.n	80049d8 <ETH_PHY_IO_WriteReg+0x24>
   {
     return -1;
- 80049d2:	f04f 33ff 	mov.w	r3, #4294967295
+ 80049d2:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  80049d6:	e000      	b.n	80049da <ETH_PHY_IO_WriteReg+0x26>
   }
 
@@ -13430,10 +13430,10 @@ osStatus osMutexWait (osMutexId mutex_id, uint32_t millisec)
  8004d96:	60fb      	str	r3, [r7, #12]
   if (millisec == osWaitForever) {
  8004d98:	683b      	ldr	r3, [r7, #0]
- 8004d9a:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8004d9a:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8004d9e:	d103      	bne.n	8004da8 <osMutexWait+0x2c>
     ticks = portMAX_DELAY;
- 8004da0:	f04f 33ff 	mov.w	r3, #4294967295
+ 8004da0:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8004da4:	60fb      	str	r3, [r7, #12]
  8004da6:	e009      	b.n	8004dbc <osMutexWait+0x40>
   }
@@ -13606,10 +13606,10 @@ int32_t osSemaphoreWait (osSemaphoreId semaphore_id, uint32_t millisec)
  8004e9e:	60fb      	str	r3, [r7, #12]
   if (millisec == osWaitForever) {
  8004ea0:	683b      	ldr	r3, [r7, #0]
- 8004ea2:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8004ea2:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8004ea6:	d103      	bne.n	8004eb0 <osSemaphoreWait+0x2c>
     ticks = portMAX_DELAY;
- 8004ea8:	f04f 33ff 	mov.w	r3, #4294967295
+ 8004ea8:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8004eac:	60fb      	str	r3, [r7, #12]
  8004eae:	e009      	b.n	8004ec4 <osSemaphoreWait+0x40>
   }
@@ -13947,10 +13947,10 @@ osEvent osMessageGet (osMessageQId queue_id, uint32_t millisec)
  8005092:	627b      	str	r3, [r7, #36]	; 0x24
   if (millisec == osWaitForever) {
  8005094:	687b      	ldr	r3, [r7, #4]
- 8005096:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005096:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  800509a:	d103      	bne.n	80050a4 <osMessageGet+0x48>
     ticks = portMAX_DELAY;
- 800509c:	f04f 33ff 	mov.w	r3, #4294967295
+ 800509c:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  80050a0:	627b      	str	r3, [r7, #36]	; 0x24
  80050a2:	e009      	b.n	80050b8 <osMessageGet+0x5c>
   }
@@ -14075,7 +14075,7 @@ void vListInitialise( List_t * const pxList )
 	ensure it remains at the end of the list. */
 	pxList->xListEnd.xItemValue = portMAX_DELAY;
  8005156:	687b      	ldr	r3, [r7, #4]
- 8005158:	f04f 32ff 	mov.w	r2, #4294967295
+ 8005158:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  800515c:	609a      	str	r2, [r3, #8]
 
 	/* The list end next and previous pointers point to itself so we know
@@ -14216,7 +14216,7 @@ const TickType_t xValueOfInsertion = pxNewListItem->xItemValue;
 	first, and the algorithm slightly modified if necessary. */
 	if( xValueOfInsertion == portMAX_DELAY )
  80051f6:	68bb      	ldr	r3, [r7, #8]
- 80051f8:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 80051f8:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  80051fc:	d103      	bne.n	8005206 <vListInsert+0x20>
 	{
 		pxIterator = pxList->xListEnd.pxPrevious;
@@ -15216,7 +15216,7 @@ Queue_t * const pxQueue = xQueue;
  800570e:	6b3b      	ldr	r3, [r7, #48]	; 0x30
  8005710:	f893 3044 	ldrb.w	r3, [r3, #68]	; 0x44
  8005714:	b25b      	sxtb	r3, r3
- 8005716:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005716:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  800571a:	d103      	bne.n	8005724 <xQueueGenericSend+0x16c>
  800571c:	6b3b      	ldr	r3, [r7, #48]	; 0x30
  800571e:	2200      	movs	r2, #0
@@ -15224,7 +15224,7 @@ Queue_t * const pxQueue = xQueue;
  8005724:	6b3b      	ldr	r3, [r7, #48]	; 0x30
  8005726:	f893 3045 	ldrb.w	r3, [r3, #69]	; 0x45
  800572a:	b25b      	sxtb	r3, r3
- 800572c:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 800572c:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005730:	d103      	bne.n	800573a <xQueueGenericSend+0x182>
  8005732:	6b3b      	ldr	r3, [r7, #48]	; 0x30
  8005734:	2200      	movs	r2, #0
@@ -15461,7 +15461,7 @@ uint32_t ulOriginalBASEPRI, ulNewBASEPRI;
 			be done when the queue is unlocked later. */
 			if( cTxLock == queueUNLOCKED )
  800588a:	f997 3033 	ldrsb.w	r3, [r7, #51]	; 0x33
- 800588e:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 800588e:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005892:	d112      	bne.n	80058ba <xQueueGenericSendFromISR+0x106>
 						}
 					}
@@ -15680,7 +15680,7 @@ Queue_t * const pxQueue = xQueue;
 			be done when the queue is unlocked later. */
 			if( cTxLock == queueUNLOCKED )
  80059a4:	f997 3027 	ldrsb.w	r3, [r7, #39]	; 0x27
- 80059a8:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 80059a8:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  80059ac:	d112      	bne.n	80059d4 <xQueueGiveFromISR+0xea>
 						}
 					}
@@ -15957,7 +15957,7 @@ Queue_t * const pxQueue = xQueue;
  8005b10:	6abb      	ldr	r3, [r7, #40]	; 0x28
  8005b12:	f893 3044 	ldrb.w	r3, [r3, #68]	; 0x44
  8005b16:	b25b      	sxtb	r3, r3
- 8005b18:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005b18:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005b1c:	d103      	bne.n	8005b26 <xQueueReceive+0x122>
  8005b1e:	6abb      	ldr	r3, [r7, #40]	; 0x28
  8005b20:	2200      	movs	r2, #0
@@ -15965,7 +15965,7 @@ Queue_t * const pxQueue = xQueue;
  8005b26:	6abb      	ldr	r3, [r7, #40]	; 0x28
  8005b28:	f893 3045 	ldrb.w	r3, [r3, #69]	; 0x45
  8005b2c:	b25b      	sxtb	r3, r3
- 8005b2e:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005b2e:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005b32:	d103      	bne.n	8005b3c <xQueueReceive+0x138>
  8005b34:	6abb      	ldr	r3, [r7, #40]	; 0x28
  8005b36:	2200      	movs	r2, #0
@@ -16294,7 +16294,7 @@ Queue_t * const pxQueue = xQueue;
  8005ce8:	6afb      	ldr	r3, [r7, #44]	; 0x2c
  8005cea:	f893 3044 	ldrb.w	r3, [r3, #68]	; 0x44
  8005cee:	b25b      	sxtb	r3, r3
- 8005cf0:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005cf0:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005cf4:	d103      	bne.n	8005cfe <xQueueSemaphoreTake+0x13a>
  8005cf6:	6afb      	ldr	r3, [r7, #44]	; 0x2c
  8005cf8:	2200      	movs	r2, #0
@@ -16302,7 +16302,7 @@ Queue_t * const pxQueue = xQueue;
  8005cfe:	6afb      	ldr	r3, [r7, #44]	; 0x2c
  8005d00:	f893 3045 	ldrb.w	r3, [r3, #69]	; 0x45
  8005d04:	b25b      	sxtb	r3, r3
- 8005d06:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005d06:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005d0a:	d103      	bne.n	8005d14 <xQueueSemaphoreTake+0x150>
  8005d0c:	6afb      	ldr	r3, [r7, #44]	; 0x2c
  8005d0e:	2200      	movs	r2, #0
@@ -16572,7 +16572,7 @@ Queue_t * const pxQueue = xQueue;
 			locked. */
 			if( cRxLock == queueUNLOCKED )
  8005e7c:	f997 3027 	ldrsb.w	r3, [r7, #39]	; 0x27
- 8005e80:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8005e80:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8005e84:	d112      	bne.n	8005eac <xQueueReceiveFromISR+0xd0>
 			{
 				if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToSend ) ) == pdFALSE )
@@ -17395,7 +17395,7 @@ BaseType_t xReturn;
 		else
 		{
 			xReturn = errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY;
- 8006260:	f04f 33ff 	mov.w	r3, #4294967295
+ 8006260:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8006264:	61bb      	str	r3, [r7, #24]
 		}
 
@@ -17996,7 +17996,7 @@ BaseType_t xReturn;
 
 		xNextTaskUnblockTime = portMAX_DELAY;
  800655a:	4b15      	ldr	r3, [pc, #84]	; (80065b0 <vTaskStartScheduler+0xc8>)
- 800655c:	f04f 32ff 	mov.w	r2, #4294967295
+ 800655c:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  8006560:	601a      	str	r2, [r3, #0]
 		xSchedulerRunning = pdTRUE;
  8006562:	4b14      	ldr	r3, [pc, #80]	; (80065b4 <vTaskStartScheduler+0xcc>)
@@ -18022,7 +18022,7 @@ BaseType_t xReturn;
  8006572:	e00e      	b.n	8006592 <vTaskStartScheduler+0xaa>
 		configASSERT( xReturn != errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY );
  8006574:	697b      	ldr	r3, [r7, #20]
- 8006576:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8006576:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  800657a:	d10a      	bne.n	8006592 <vTaskStartScheduler+0xaa>
 	__asm volatile
  800657c:	f04f 0350 	mov.w	r3, #80	; 0x50
@@ -18485,7 +18485,7 @@ BaseType_t xSwitchRequired = pdFALSE;
 					next time through. */
 					xNextTaskUnblockTime = portMAX_DELAY; /*lint !e961 MISRA exception as the casts are only redundant for some ports. */
  80067d2:	4b36      	ldr	r3, [pc, #216]	; (80068ac <xTaskIncrementTick+0x158>)
- 80067d4:	f04f 32ff 	mov.w	r2, #4294967295
+ 80067d4:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  80067d8:	601a      	str	r2, [r3, #0]
 					break;
  80067da:	e03e      	b.n	800685a <xTaskIncrementTick+0x106>
@@ -19048,7 +19048,7 @@ BaseType_t xReturn;
 			if( *pxTicksToWait == portMAX_DELAY )
  8006b16:	683b      	ldr	r3, [r7, #0]
  8006b18:	681b      	ldr	r3, [r3, #0]
- 8006b1a:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8006b1a:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8006b1e:	d102      	bne.n	8006b26 <xTaskCheckForTimeOut+0x66>
 			{
 				/* If INCLUDE_vTaskSuspend is set to 1 and the block time
@@ -19448,7 +19448,7 @@ TCB_t *pxTCB;
 		there is an item in the delayed list. */
 		xNextTaskUnblockTime = portMAX_DELAY;
  8006d20:	4b0a      	ldr	r3, [pc, #40]	; (8006d4c <prvResetNextTaskUnblockTime+0x3c>)
- 8006d22:	f04f 32ff 	mov.w	r2, #4294967295
+ 8006d22:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  8006d26:	601a      	str	r2, [r3, #0]
 		which the task at the head of the delayed list should be removed
 		from the Blocked state. */
@@ -20202,7 +20202,7 @@ const TickType_t xConstTickCount = xTickCount;
 	{
 		if( ( xTicksToWait == portMAX_DELAY ) && ( xCanBlockIndefinitely != pdFALSE ) )
  8007102:	687b      	ldr	r3, [r7, #4]
- 8007104:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8007104:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8007108:	d10a      	bne.n	8007120 <prvAddCurrentTaskToDelayedList+0x58>
  800710a:	683b      	ldr	r3, [r7, #0]
  800710c:	2b00      	cmp	r3, #0
@@ -20384,7 +20384,7 @@ volatile uint32_t ulDummy = 0;
 	configASSERT( uxCriticalNesting == ~0UL );
  8007206:	4b12      	ldr	r3, [pc, #72]	; (8007250 <prvTaskExitError+0x54>)
  8007208:	681b      	ldr	r3, [r3, #0]
- 800720a:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 800720a:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  800720e:	d00a      	beq.n	8007226 <prvTaskExitError+0x2a>
 	__asm volatile
  8007210:	f04f 0350 	mov.w	r3, #80	; 0x50
@@ -21815,7 +21815,7 @@ again:
  8007a1a:	60f8      	str	r0, [r7, #12]
   if (sleeptime == SYS_TIMEOUTS_SLEEPTIME_INFINITE) {
  8007a1c:	68fb      	ldr	r3, [r7, #12]
- 8007a1e:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8007a1e:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8007a22:	d10b      	bne.n	8007a3c <tcpip_timeouts_mbox_fetch+0x30>
     UNLOCK_TCPIP_CORE();
  8007a24:	4813      	ldr	r0, [pc, #76]	; (8007a74 <tcpip_timeouts_mbox_fetch+0x68>)
@@ -21855,7 +21855,7 @@ again:
  8007a5c:	f00c f9e2 	bl	8013e24 <sys_mutex_lock>
   if (res == SYS_ARCH_TIMEOUT) {
  8007a60:	68bb      	ldr	r3, [r7, #8]
- 8007a62:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8007a62:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8007a66:	d102      	bne.n	8007a6e <tcpip_timeouts_mbox_fetch+0x62>
     /* If a SYS_ARCH_TIMEOUT value is returned, a timeout occurred
        before a message could be fetched. */
@@ -22083,7 +22083,7 @@ tcpip_inpkt(struct pbuf *p, struct netif *inp, netif_input_fn input_fn)
  8007b9e:	2b00      	cmp	r3, #0
  8007ba0:	d102      	bne.n	8007ba8 <tcpip_inpkt+0x38>
     return ERR_MEM;
- 8007ba2:	f04f 33ff 	mov.w	r3, #4294967295
+ 8007ba2:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8007ba6:	e01a      	b.n	8007bde <tcpip_inpkt+0x6e>
   }
 
@@ -22115,7 +22115,7 @@ tcpip_inpkt(struct pbuf *p, struct netif *inp, netif_input_fn input_fn)
  8007bd0:	2009      	movs	r0, #9
  8007bd2:	f000 fe0b 	bl	80087ec <memp_free>
     return ERR_MEM;
- 8007bd6:	f04f 33ff 	mov.w	r3, #4294967295
+ 8007bd6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8007bda:	e000      	b.n	8007bde <tcpip_inpkt+0x6e>
   }
   return ERR_OK;
@@ -22210,7 +22210,7 @@ tcpip_try_callback(tcpip_callback_fn function, void *ctx)
  8007c6a:	2b00      	cmp	r3, #0
  8007c6c:	d102      	bne.n	8007c74 <tcpip_try_callback+0x38>
     return ERR_MEM;
- 8007c6e:	f04f 33ff 	mov.w	r3, #4294967295
+ 8007c6e:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8007c72:	e017      	b.n	8007ca4 <tcpip_try_callback+0x68>
   }
 
@@ -22239,7 +22239,7 @@ tcpip_try_callback(tcpip_callback_fn function, void *ctx)
  8007c96:	2008      	movs	r0, #8
  8007c98:	f000 fda8 	bl	80087ec <memp_free>
     return ERR_MEM;
- 8007c9c:	f04f 33ff 	mov.w	r3, #4294967295
+ 8007c9c:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8007ca0:	e000      	b.n	8007ca4 <tcpip_try_callback+0x68>
   }
   return ERR_OK;
@@ -28058,7 +28058,7 @@ tcp_close_shutdown_fin(struct tcp_pcb *pcb)
  8009e88:	e00d      	b.n	8009ea6 <tcp_close_shutdown_fin+0xba>
   } else if (err == ERR_MEM) {
  8009e8a:	f997 300f 	ldrsb.w	r3, [r7, #15]
- 8009e8e:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8009e8e:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8009e92:	d108      	bne.n	8009ea6 <tcp_close_shutdown_fin+0xba>
     /* Mark this pcb for closing. Closing is retried from tcp_tmr. */
     tcp_set_flags(pcb, TF_CLOSEPEND);
@@ -32745,7 +32745,7 @@ tcp_listen_input(struct tcp_pcb_listen *pcb)
  800bb00:	699b      	ldr	r3, [r3, #24]
  800bb02:	687a      	ldr	r2, [r7, #4]
  800bb04:	6910      	ldr	r0, [r2, #16]
- 800bb06:	f04f 32ff 	mov.w	r2, #4294967295
+ 800bb06:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  800bb0a:	2100      	movs	r1, #0
  800bb0c:	4798      	blx	r3
  800bb0e:	4603      	mov	r3, r0
@@ -37286,7 +37286,7 @@ tcp_split_unsent_seg(struct tcp_pcb *pcb, u16_t split)
  800d994:	2b00      	cmp	r3, #0
  800d996:	d102      	bne.n	800d99e <tcp_split_unsent_seg+0x3e>
     return ERR_MEM;
- 800d998:	f04f 33ff 	mov.w	r3, #4294967295
+ 800d998:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800d99c:	e116      	b.n	800dbcc <tcp_split_unsent_seg+0x26c>
   }
 
@@ -37634,7 +37634,7 @@ memerr:
   }
 
   return ERR_MEM;
- 800dbc8:	f04f 33ff 	mov.w	r3, #4294967295
+ 800dbc8:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
 }
  800dbcc:	4618      	mov	r0, r3
  800dbce:	3724      	adds	r7, #36	; 0x24
@@ -37835,7 +37835,7 @@ tcp_enqueue_flags(struct tcp_pcb *pcb, u8_t flags)
  800dd0e:	835a      	strh	r2, [r3, #26]
     TCP_STATS_INC(tcp.memerr);
     return ERR_MEM;
- 800dd10:	f04f 33ff 	mov.w	r3, #4294967295
+ 800dd10:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800dd14:	e095      	b.n	800de42 <tcp_enqueue_flags+0x1b2>
   }
   LWIP_ASSERT("tcp_enqueue_flags: check that first pbuf can hold optlen",
@@ -37876,7 +37876,7 @@ tcp_enqueue_flags(struct tcp_pcb *pcb, u8_t flags)
  800dd58:	835a      	strh	r2, [r3, #26]
     TCP_STATS_INC(tcp.memerr);
     return ERR_MEM;
- 800dd5a:	f04f 33ff 	mov.w	r3, #4294967295
+ 800dd5a:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800dd5e:	e070      	b.n	800de42 <tcp_enqueue_flags+0x1b2>
   }
   LWIP_ASSERT("seg->tcphdr not aligned", ((mem_ptr_t)seg->tcphdr % LWIP_MIN(MEM_ALIGNMENT, 4)) == 0);
@@ -40166,7 +40166,7 @@ tcp_keepalive(struct tcp_pcb *pcb)
     LWIP_DEBUGF(TCP_DEBUG,
                 ("tcp_keepalive: could not allocate memory for pbuf\n"));
     return ERR_MEM;
- 800eb80:	f04f 33ff 	mov.w	r3, #4294967295
+ 800eb80:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800eb84:	e010      	b.n	800eba8 <tcp_keepalive+0x6c>
   }
   tcp_output_fill_options(pcb, p, 0, optlen);
@@ -40309,7 +40309,7 @@ tcp_zero_window_probe(struct tcp_pcb *pcb)
  800ec5a:	d102      	bne.n	800ec62 <tcp_zero_window_probe+0xa6>
     LWIP_DEBUGF(TCP_DEBUG, ("tcp_zero_window_probe: no memory for pbuf\n"));
     return ERR_MEM;
- 800ec5c:	f04f 33ff 	mov.w	r3, #4294967295
+ 800ec5c:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800ec60:	e04c      	b.n	800ecfc <tcp_zero_window_probe+0x140>
   }
   tcphdr = (struct tcp_hdr *)p->payload;
@@ -40955,7 +40955,7 @@ sys_timeouts_sleeptime(void)
  800efe6:	2b00      	cmp	r3, #0
  800efe8:	d102      	bne.n	800eff0 <sys_timeouts_sleeptime+0x14>
     return SYS_TIMEOUTS_SLEEPTIME_INFINITE;
- 800efea:	f04f 33ff 	mov.w	r3, #4294967295
+ 800efea:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800efee:	e020      	b.n	800f032 <sys_timeouts_sleeptime+0x56>
   }
   now = sys_now();
@@ -41190,7 +41190,7 @@ udp_input_local_match(struct udp_pcb *pcb, struct netif *inp, u8_t broadcast)
  800f146:	4b17      	ldr	r3, [pc, #92]	; (800f1a4 <udp_input_local_match+0xc4>)
  800f148:	695b      	ldr	r3, [r3, #20]
         if (ip4_addr_isany(ip_2_ip4(&pcb->local_ip)) ||
- 800f14a:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 800f14a:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  800f14e:	d00a      	beq.n	800f166 <udp_input_local_match+0x86>
             ip4_addr_netcmp(ip_2_ip4(&pcb->local_ip), ip4_current_dest_addr(), netif_ip4_netmask(inp))) {
  800f150:	68fb      	ldr	r3, [r7, #12]
@@ -41414,7 +41414,7 @@ udp_input(struct pbuf *p, struct netif *inp)
  800f270:	d014      	beq.n	800f29c <udp_input+0xf4>
  800f272:	4b53      	ldr	r3, [pc, #332]	; (800f3c0 <udp_input+0x218>)
  800f274:	695b      	ldr	r3, [r3, #20]
- 800f276:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 800f276:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  800f27a:	d10f      	bne.n	800f29c <udp_input+0xf4>
           /* global broadcast address (only valid for IPv4; match was checked before) */
           if (!IP_IS_V4_VAL(uncon_pcb->local_ip) || !ip4_addr_cmp(ip_2_ip4(&uncon_pcb->local_ip), netif_ip4_addr(inp))) {
@@ -41919,7 +41919,7 @@ udp_sendto_if_src(struct udp_pcb *pcb, struct pbuf *p,
  800f578:	4293      	cmp	r3, r2
  800f57a:	d902      	bls.n	800f582 <udp_sendto_if_src+0xca>
     return ERR_MEM;
- 800f57c:	f04f 33ff 	mov.w	r3, #4294967295
+ 800f57c:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800f580:	e06b      	b.n	800f65a <udp_sendto_if_src+0x1a2>
   }
   /* not enough space to add an UDP header to first pbuf in given p chain? */
@@ -41944,7 +41944,7 @@ udp_sendto_if_src(struct udp_pcb *pcb, struct pbuf *p,
  800f5a2:	d102      	bne.n	800f5aa <udp_sendto_if_src+0xf2>
       LWIP_DEBUGF(UDP_DEBUG | LWIP_DBG_TRACE | LWIP_DBG_LEVEL_SERIOUS, ("udp_send: could not allocate header\n"));
       return ERR_MEM;
- 800f5a4:	f04f 33ff 	mov.w	r3, #4294967295
+ 800f5a4:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800f5a8:	e057      	b.n	800f65a <udp_sendto_if_src+0x1a2>
     }
     if (p->tot_len != 0) {
@@ -42742,7 +42742,7 @@ dhcp_inc_pcb_refcount(void)
  800f9f2:	2b00      	cmp	r3, #0
  800f9f4:	d102      	bne.n	800f9fc <dhcp_inc_pcb_refcount+0x38>
       return ERR_MEM;
- 800f9f6:	f04f 33ff 	mov.w	r3, #4294967295
+ 800f9f6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  800f9fa:	e024      	b.n	800fa46 <dhcp_inc_pcb_refcount+0x82>
     }
 
@@ -43956,7 +43956,7 @@ dhcp_start(struct netif *netif)
  801010e:	d202      	bcs.n	8010116 <dhcp_start+0x5a>
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_start(): Cannot use this netif with DHCP: MTU is too small\n"));
     return ERR_MEM;
- 8010110:	f04f 33ff 	mov.w	r3, #4294967295
+ 8010110:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8010114:	e044      	b.n	80101a0 <dhcp_start+0xe4>
   }
 
@@ -43976,7 +43976,7 @@ dhcp_start(struct netif *netif)
  8010128:	d102      	bne.n	8010130 <dhcp_start+0x74>
       LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_start(): could not allocate dhcp\n"));
       return ERR_MEM;
- 801012a:	f04f 33ff 	mov.w	r3, #4294967295
+ 801012a:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  801012e:	e037      	b.n	80101a0 <dhcp_start+0xe4>
     }
 
@@ -44018,7 +44018,7 @@ dhcp_start(struct netif *netif)
  8010154:	2b00      	cmp	r3, #0
  8010156:	d002      	beq.n	801015e <dhcp_start+0xa2>
     return ERR_MEM;
- 8010158:	f04f 33ff 	mov.w	r3, #4294967295
+ 8010158:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  801015c:	e020      	b.n	80101a0 <dhcp_start+0xe4>
   }
   dhcp->pcb_allocated = 1;
@@ -44057,7 +44057,7 @@ dhcp_start(struct netif *netif)
  8010190:	6878      	ldr	r0, [r7, #4]
  8010192:	f000 fc59 	bl	8010a48 <dhcp_release_and_stop>
     return ERR_MEM;
- 8010196:	f04f 33ff 	mov.w	r3, #4294967295
+ 8010196:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  801019a:	e001      	b.n	80101a0 <dhcp_start+0xe4>
   }
   return result;
@@ -44611,7 +44611,7 @@ dhcp_bind(struct netif *netif)
   if (dhcp->offered_t0_lease != 0xffffffffUL) {
  80104f8:	69bb      	ldr	r3, [r7, #24]
  80104fa:	6a9b      	ldr	r3, [r3, #40]	; 0x28
- 80104fc:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 80104fc:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8010500:	d019      	beq.n	8010536 <dhcp_bind+0x7e>
     /* set renewal period timer */
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_bind(): t0 renewal timer %"U32_F" secs\n", dhcp->offered_t0_lease));
@@ -44653,7 +44653,7 @@ dhcp_bind(struct netif *netif)
   if (dhcp->offered_t1_renew != 0xffffffffUL) {
  8010536:	69bb      	ldr	r3, [r7, #24]
  8010538:	6adb      	ldr	r3, [r3, #44]	; 0x2c
- 801053a:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 801053a:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  801053e:	d01d      	beq.n	801057c <dhcp_bind+0xc4>
     /* set renewal period timer */
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_bind(): t1 renewal timer %"U32_F" secs\n", dhcp->offered_t1_renew));
@@ -44699,7 +44699,7 @@ dhcp_bind(struct netif *netif)
   if (dhcp->offered_t2_rebind != 0xffffffffUL) {
  801057c:	69bb      	ldr	r3, [r7, #24]
  801057e:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8010580:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8010580:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8010584:	d01d      	beq.n	80105c2 <dhcp_bind+0x10a>
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_bind(): t2 rebind timer %"U32_F" secs\n", dhcp->offered_t2_rebind));
     timeout = (dhcp->offered_t2_rebind + DHCP_COARSE_TIMER_SECS / 2) / DHCP_COARSE_TIMER_SECS;
@@ -46033,7 +46033,7 @@ again:
  8010de0:	2300      	movs	r3, #0
  8010de2:	f887 3026 	strb.w	r3, [r7, #38]	; 0x26
     int decode_idx = -1;
- 8010de6:	f04f 33ff 	mov.w	r3, #4294967295
+ 8010de6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8010dea:	623b      	str	r3, [r7, #32]
     u16_t val_offset = (u16_t)(offset + 2);
  8010dec:	8f7b      	ldrh	r3, [r7, #58]	; 0x3a
@@ -47903,7 +47903,7 @@ etharp_find_entry(const ip4_addr_t *ipaddr, u8_t flags, struct netif *netif)
  8011a52:	d102      	bne.n	8011a5a <etharp_find_entry+0x1be>
     LWIP_DEBUGF(ETHARP_DEBUG | LWIP_DBG_TRACE, ("etharp_find_entry: no empty entry found and not allowed to recycle\n"));
     return (s16_t)ERR_MEM;
- 8011a54:	f04f 33ff 	mov.w	r3, #4294967295
+ 8011a54:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8011a58:	e085      	b.n	8011b66 <etharp_find_entry+0x2ca>
    *
    * { ETHARP_FLAG_TRY_HARD is set at this point }
@@ -47974,7 +47974,7 @@ etharp_find_entry(const ip4_addr_t *ipaddr, u8_t flags, struct netif *netif)
     } else {
       LWIP_DEBUGF(ETHARP_DEBUG | LWIP_DBG_TRACE, ("etharp_find_entry: no empty or recyclable entries found\n"));
       return (s16_t)ERR_MEM;
- 8011ab6:	f04f 33ff 	mov.w	r3, #4294967295
+ 8011ab6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8011aba:	e054      	b.n	8011b66 <etharp_find_entry+0x2ca>
     }
 
@@ -49497,7 +49497,7 @@ etharp_raw(struct netif *netif, const struct eth_addr *ethsrc_addr,
                 ("etharp_raw: could not allocate pbuf for ARP request.\n"));
     ETHARP_STATS_INC(etharp.memerr);
     return ERR_MEM;
- 8012442:	f04f 33ff 	mov.w	r3, #4294967295
+ 8012442:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8012446:	e05d      	b.n	8012504 <etharp_raw+0xfc>
   }
   LWIP_ASSERT("check that first pbuf can hold struct etharp_hdr",
@@ -51368,7 +51368,7 @@ ip4_addr_isbroadcast_u32(u32_t addr, const struct netif *netif)
   /* all ones (broadcast) or all zeroes (old skool broadcast) */
   if ((~addr == IPADDR_ANY) ||
  8012e1a:	687b      	ldr	r3, [r7, #4]
- 8012e1c:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 8012e1c:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8012e20:	d002      	beq.n	8012e28 <ip4_addr_isbroadcast_u32+0x1c>
  8012e22:	687b      	ldr	r3, [r7, #4]
  8012e24:	2b00      	cmp	r3, #0
@@ -52067,7 +52067,7 @@ ip_reass_chain_frag_into_datagram_and_validate(struct ip_reassdata *ipr, struct 
  8013204:	d202      	bcs.n	801320c <ip_reass_chain_frag_into_datagram_and_validate+0x48>
     /* invalid datagram */
     return IP_REASS_VALIDATE_PBUF_DROPPED;
- 8013206:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013206:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  801320a:	e135      	b.n	8013478 <ip_reass_chain_frag_into_datagram_and_validate+0x2b4>
   }
   len = (u16_t)(len - hlen);
@@ -52126,7 +52126,7 @@ ip_reass_chain_frag_into_datagram_and_validate(struct ip_reassdata *ipr, struct 
  8013262:	d902      	bls.n	801326a <ip_reass_chain_frag_into_datagram_and_validate+0xa6>
     /* u16_t overflow, cannot handle this */
     return IP_REASS_VALIDATE_PBUF_DROPPED;
- 8013264:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013264:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8013268:	e106      	b.n	8013478 <ip_reass_chain_frag_into_datagram_and_validate+0x2b4>
   }
 
@@ -52180,7 +52180,7 @@ ip_reass_chain_frag_into_datagram_and_validate(struct ip_reassdata *ipr, struct 
  80132b2:	d902      	bls.n	80132ba <ip_reass_chain_frag_into_datagram_and_validate+0xf6>
           /* fragment overlaps with previous or following, throw away */
           return IP_REASS_VALIDATE_PBUF_DROPPED;
- 80132b4:	f04f 33ff 	mov.w	r3, #4294967295
+ 80132b4:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  80132b8:	e0de      	b.n	8013478 <ip_reass_chain_frag_into_datagram_and_validate+0x2b4>
         }
 #endif /* IP_REASS_CHECK_OVERLAP */
@@ -52219,7 +52219,7 @@ ip_reass_chain_frag_into_datagram_and_validate(struct ip_reassdata *ipr, struct 
  80132e2:	429a      	cmp	r2, r3
  80132e4:	d902      	bls.n	80132ec <ip_reass_chain_frag_into_datagram_and_validate+0x128>
           return IP_REASS_VALIDATE_PBUF_DROPPED;
- 80132e6:	f04f 33ff 	mov.w	r3, #4294967295
+ 80132e6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  80132ea:	e0c5      	b.n	8013478 <ip_reass_chain_frag_into_datagram_and_validate+0x2b4>
         ipr->p = new_p;
  80132ec:	68fb      	ldr	r3, [r7, #12]
@@ -52238,7 +52238,7 @@ ip_reass_chain_frag_into_datagram_and_validate(struct ip_reassdata *ipr, struct 
  8013302:	d102      	bne.n	801330a <ip_reass_chain_frag_into_datagram_and_validate+0x146>
       /* received the same datagram twice: no need to keep the datagram */
       return IP_REASS_VALIDATE_PBUF_DROPPED;
- 8013304:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013304:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8013308:	e0b6      	b.n	8013478 <ip_reass_chain_frag_into_datagram_and_validate+0x2b4>
 #if IP_REASS_CHECK_OVERLAP
     } else if (iprh->start < iprh_tmp->end) {
@@ -52252,7 +52252,7 @@ ip_reass_chain_frag_into_datagram_and_validate(struct ip_reassdata *ipr, struct 
  8013318:	d202      	bcs.n	8013320 <ip_reass_chain_frag_into_datagram_and_validate+0x15c>
       /* overlap: no need to keep the new datagram */
       return IP_REASS_VALIDATE_PBUF_DROPPED;
- 801331a:	f04f 33ff 	mov.w	r3, #4294967295
+ 801331a:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  801331e:	e0ab      	b.n	8013478 <ip_reass_chain_frag_into_datagram_and_validate+0x2b4>
 #endif /* IP_REASS_CHECK_OVERLAP */
     } else {
@@ -52761,7 +52761,7 @@ ip4_reass(struct pbuf *p)
  801361a:	6178      	str	r0, [r7, #20]
   if (valid == IP_REASS_VALIDATE_PBUF_DROPPED) {
  801361c:	697b      	ldr	r3, [r7, #20]
- 801361e:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 801361e:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
  8013622:	f000 809b 	beq.w	801375c <ip4_reass+0x2c4>
   /* if we come here, the pbuf has been enqueued */
 
@@ -53543,7 +53543,7 @@ ip4_frag(struct pbuf *p, struct netif *netif, const ip4_addr_t *dest)
 memerr:
   MIB2_STATS_INC(mib2.ipfragfails);
   return ERR_MEM;
- 8013ae6:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013ae6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
 }
  8013aea:	4618      	mov	r0, r3
  8013aec:	3748      	adds	r7, #72	; 0x48
@@ -53915,7 +53915,7 @@ err_t sys_mbox_new(sys_mbox_t *mbox, int size)
  8013ce8:	2b00      	cmp	r3, #0
  8013cea:	d102      	bne.n	8013cf2 <sys_mbox_new+0x3a>
     return ERR_MEM;
- 8013cec:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013cec:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8013cf0:	e000      	b.n	8013cf4 <sys_mbox_new+0x3c>
 
   return ERR_OK;
@@ -54036,7 +54036,7 @@ u32_t sys_arch_mbox_fetch(sys_mbox_t *mbox, void **msg, u32_t timeout)
     else
     {
       return SYS_ARCH_TIMEOUT;
- 8013d72:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013d72:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8013d76:	e016      	b.n	8013da6 <sys_arch_mbox_fetch+0x76>
     }
   }
@@ -54047,7 +54047,7 @@ u32_t sys_arch_mbox_fetch(sys_mbox_t *mbox, void **msg, u32_t timeout)
  8013d78:	69fb      	ldr	r3, [r7, #28]
  8013d7a:	6819      	ldr	r1, [r3, #0]
  8013d7c:	463b      	mov	r3, r7
- 8013d7e:	f04f 32ff 	mov.w	r2, #4294967295
+ 8013d7e:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  8013d82:	4618      	mov	r0, r3
  8013d84:	f7f1 f96a 	bl	800505c <osMessageGet>
  8013d88:	f107 0320 	add.w	r3, r7, #32
@@ -54168,7 +54168,7 @@ err_t sys_mutex_new(sys_mutex_t *mutex) {
     ++lwip_stats.sys.mutex.err;
 #endif /* SYS_STATS */
     return ERR_MEM;
- 8013e14:	f04f 33ff 	mov.w	r3, #4294967295
+ 8013e14:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  8013e18:	e000      	b.n	8013e1c <sys_mutex_new+0x30>
   ++lwip_stats.sys.mutex.used;
   if (lwip_stats.sys.mutex.max < lwip_stats.sys.mutex.used) {
@@ -54198,7 +54198,7 @@ void sys_mutex_lock(sys_mutex_t *mutex)
   osMutexWait(*mutex, osWaitForever);
  8013e2c:	687b      	ldr	r3, [r7, #4]
  8013e2e:	681b      	ldr	r3, [r3, #0]
- 8013e30:	f04f 31ff 	mov.w	r1, #4294967295
+ 8013e30:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  8013e34:	4618      	mov	r0, r3
  8013e36:	f7f0 ffa1 	bl	8004d7c <osMutexWait>
 #else
@@ -54296,7 +54296,7 @@ sys_prot_t sys_arch_protect(void)
   osMutexWait(lwip_sys_mutex, osWaitForever);
  8013eac:	4b04      	ldr	r3, [pc, #16]	; (8013ec0 <sys_arch_protect+0x18>)
  8013eae:	681b      	ldr	r3, [r3, #0]
- 8013eb0:	f04f 31ff 	mov.w	r1, #4294967295
+ 8013eb0:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  8013eb4:	4618      	mov	r0, r3
  8013eb6:	f7f0 ff61 	bl	8004d7c <osMutexWait>
 #else
@@ -54603,7 +54603,7 @@ void sys_arch_unprotect(sys_prot_t pval)
 0801413e <memcpy>:
  801413e:	440a      	add	r2, r1
  8014140:	4291      	cmp	r1, r2
- 8014142:	f100 33ff 	add.w	r3, r0, #4294967295
+ 8014142:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
  8014146:	d100      	bne.n	801414a <memcpy+0xc>
  8014148:	4770      	bx	lr
  801414a:	b510      	push	{r4, lr}
@@ -54646,7 +54646,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014198:	f000 f93c 	bl	8014414 <_sbrk_r>
  801419c:	3001      	adds	r0, #1
  801419e:	d101      	bne.n	80141a4 <sbrk_aligned+0x38>
- 80141a0:	f04f 34ff 	mov.w	r4, #4294967295
+ 80141a0:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
  80141a4:	4620      	mov	r0, r4
  80141a6:	bd70      	pop	{r4, r5, r6, pc}
  80141a8:	20018d80 	.word	0x20018d80
@@ -55168,7 +55168,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  801462c:	89a3      	ldrh	r3, [r4, #12]
  801462e:	f043 0340 	orr.w	r3, r3, #64	; 0x40
  8014632:	81a3      	strh	r3, [r4, #12]
- 8014634:	f04f 30ff 	mov.w	r0, #4294967295
+ 8014634:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
  8014638:	e78e      	b.n	8014558 <__sflush_r+0x1c>
  801463a:	4407      	add	r7, r0
  801463c:	eba8 0800 	sub.w	r8, r8, r0
@@ -55432,7 +55432,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014862:	6e6b      	ldr	r3, [r5, #100]	; 0x64
  8014864:	07dc      	lsls	r4, r3, #31
  8014866:	d50e      	bpl.n	8014886 <_vfiprintf_r+0x6a>
- 8014868:	f04f 30ff 	mov.w	r0, #4294967295
+ 8014868:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
  801486c:	b01d      	add	sp, #116	; 0x74
  801486e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8014872:	4b7b      	ldr	r3, [pc, #492]	; (8014a60 <_vfiprintf_r+0x244>)
@@ -55482,7 +55482,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  80148e0:	2b00      	cmp	r3, #0
  80148e2:	f000 80a2 	beq.w	8014a2a <_vfiprintf_r+0x20e>
  80148e6:	2300      	movs	r3, #0
- 80148e8:	f04f 32ff 	mov.w	r2, #4294967295
+ 80148e8:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  80148ec:	e9cd 2305 	strd	r2, r3, [sp, #20]
  80148f0:	f10a 0a01 	add.w	sl, sl, #1
  80148f4:	9304      	str	r3, [sp, #16]
@@ -55549,7 +55549,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014984:	9203      	str	r2, [sp, #12]
  8014986:	2b00      	cmp	r3, #0
  8014988:	bfb8      	it	lt
- 801498a:	f04f 33ff 	movlt.w	r3, #4294967295
+ 801498a:	f04f 33ff 	movlt.w	r3, #4294967295	; 0xffffffff
  801498e:	3402      	adds	r4, #2
  8014990:	9305      	str	r3, [sp, #20]
  8014992:	f8df a0e4 	ldr.w	sl, [pc, #228]	; 8014a78 <_vfiprintf_r+0x25c>
@@ -55720,7 +55720,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014b1a:	47c0      	blx	r8
  8014b1c:	3001      	adds	r0, #1
  8014b1e:	d103      	bne.n	8014b28 <_printf_common+0xac>
- 8014b20:	f04f 30ff 	mov.w	r0, #4294967295
+ 8014b20:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
  8014b24:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
  8014b28:	3501      	adds	r5, #1
  8014b2a:	e7c6      	b.n	8014aba <_printf_common+0x3e>
@@ -55868,7 +55868,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014c98:	bfde      	ittt	le
  8014c9a:	2330      	movle	r3, #48	; 0x30
  8014c9c:	f805 3c01 	strble.w	r3, [r5, #-1]
- 8014ca0:	f105 35ff 	addle.w	r5, r5, #4294967295
+ 8014ca0:	f105 35ff 	addle.w	r5, r5, #4294967295	; 0xffffffff
  8014ca4:	1b52      	subs	r2, r2, r5
  8014ca6:	6122      	str	r2, [r4, #16]
  8014ca8:	f8cd a000 	str.w	sl, [sp]
@@ -55879,7 +55879,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014cb4:	f7ff fee2 	bl	8014a7c <_printf_common>
  8014cb8:	3001      	adds	r0, #1
  8014cba:	d14c      	bne.n	8014d56 <_printf_i+0x1fe>
- 8014cbc:	f04f 30ff 	mov.w	r0, #4294967295
+ 8014cbc:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
  8014cc0:	b004      	add	sp, #16
  8014cc2:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
  8014cc6:	4835      	ldr	r0, [pc, #212]	; (8014d9c <_printf_i+0x244>)
@@ -56070,7 +56070,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014e50:	f000 f80c 	bl	8014e6c <__swsetup_r>
  8014e54:	2800      	cmp	r0, #0
  8014e56:	d0cb      	beq.n	8014df0 <__swbuf_r+0x28>
- 8014e58:	f04f 37ff 	mov.w	r7, #4294967295
+ 8014e58:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
  8014e5c:	e7ea      	b.n	8014e34 <__swbuf_r+0x6c>
  8014e5e:	bf00      	nop
  8014e60:	0801817c 	.word	0x0801817c
@@ -56102,7 +56102,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8014e9a:	6033      	str	r3, [r6, #0]
  8014e9c:	f042 0340 	orr.w	r3, r2, #64	; 0x40
  8014ea0:	81a3      	strh	r3, [r4, #12]
- 8014ea2:	f04f 30ff 	mov.w	r0, #4294967295
+ 8014ea2:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
  8014ea6:	e03e      	b.n	8014f26 <__swsetup_r+0xba>
  8014ea8:	4b25      	ldr	r3, [pc, #148]	; (8014f40 <__swsetup_r+0xd4>)
  8014eaa:	429c      	cmp	r4, r3
@@ -56273,7 +56273,7 @@ void sys_arch_unprotect(sys_prot_t pval)
  8015028:	d904      	bls.n	8015034 <_raise_r+0x14>
  801502a:	2316      	movs	r3, #22
  801502c:	6003      	str	r3, [r0, #0]
- 801502e:	f04f 30ff 	mov.w	r0, #4294967295
+ 801502e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
  8015032:	bd38      	pop	{r3, r4, r5, pc}
  8015034:	6c42      	ldr	r2, [r0, #68]	; 0x44
  8015036:	b112      	cbz	r2, 801503e <_raise_r+0x1e>

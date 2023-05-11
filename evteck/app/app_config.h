@@ -8,9 +8,10 @@
 #ifndef APP_APP_CONFIG_H_
 #define APP_APP_CONFIG_H_
 
-#define PORT                        1234
-#define KEEPALIVE_IDLE              1
-#define KEEPALIVE_INTERVAL          1
+#define PORT_SETTING                1234 // Port setting
+#define PORT_DATA					8000
+#define KEEPALIVE_IDLE              5
+#define KEEPALIVE_INTERVAL          5
 #define KEEPALIVE_COUNT             1
 
 #endif /* APP_APP_CONFIG_H_ */

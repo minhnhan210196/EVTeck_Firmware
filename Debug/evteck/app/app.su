@@ -1,6 +1,4 @@
-../evteck/app/app.c:40:6:app_init	16	static
-../evteck/app/app.c:48:13:do_retransmit	160	static
-../evteck/app/app.c:79:13:ev_read_sensor_task	16	static
-../evteck/app/app.c:84:13:ev_tcp_server_task	368	static
-../evteck/app/app.c:156:13:ev_creat_client	24	static
-../evteck/app/app.c:159:13:ev_tcp_client_task	16	static
+app.c:34:6:app_init	16	static
+app.c:43:13:do_send_data	16	static
+app.c:54:13:ev_read_sensor_task	16	static
+app.c:61:13:ev_tcp_server_data_task	232	static

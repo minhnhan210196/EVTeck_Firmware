@@ -14,7 +14,7 @@
 #include "err.h"
 #include "sockets.h"
 #include "app_config.h"
-#include "cli_retarget.h"
+#include "cli/cli_retarget.h"
 #include "semphr.h"
 #include "cli_app.h"
 

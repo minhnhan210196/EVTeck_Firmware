@@ -28,8 +28,8 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "cli_retarget.h"
-#include "cli_shell.h"
+#include "cli/cli_retarget.h"
+#include "cli/cli_shell.h"
 #include "api.h"
 #include "FreeRTOS.h"
 #include "queue.h"

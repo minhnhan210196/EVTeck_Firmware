@@ -18,20 +18,28 @@
 #include "queue.h"
 #include "semphr.h"
 #include "setting/setting_app.h"
+#include "ate/ate.h"
+#include "board.h"
+
+AFE ltc23xx;
+ATE evteck_ate;
+ATE_Config ate_config = {.gain = 1,.p_afe = &ltc23xx};
+
+
 
 TaskHandle_t ev_read_sensor_handle;
 TaskHandle_t ev_tcp_server_data_handle;
 TaskHandle_t ev_tcp_client_handle;
 QueueHandle_t ev_data_queue_handle;
 
-
-
 static void ev_read_sensor_task(void *arg);
 static void ev_tcp_server_data_task(void* arg);
-
 static void do_send_data(const int sock);
 
 void app_init(void) {
+	board_init();
+	ate_init(&evteck_ate, &ate_config);
+	ev_data_queue_handle = xQueueCreate(1024,sizeof(float));
 	xTaskCreate(ev_read_sensor_task, "read sensor", 1024, NULL,
 			configMAX_PRIORITIES, &ev_read_sensor_handle);
 	setting_app();
@@ -39,21 +47,55 @@ void app_init(void) {
 			configMAX_PRIORITIES - 1, &ev_tcp_server_data_handle);
 }
 
+#define MAX_BUFF_LENGTH 1024
+
+typedef union{
+	uint8_t u8_t[4];
+	float fl_t;
+}Data_Type_t;
 
 static void do_send_data(const int sock){
+	uint8_t buff[MAX_BUFF_LENGTH];
+	uint16_t length = 0;
+	Data_Type_t data_sensor;
+	int byte_write = 0;
 	while(1){
 		// Read Data
+		if(xQueueReceive(ev_data_queue_handle,&data_sensor.fl_t, (TickType_t) 10) == pdPASS){
+			for(uint8_t i = 0;i<4;i++){
+				buff[length+i] = data_sensor.u8_t[i];
+			}
+			length += 4;
+		}
 		// Send Data
+		if(length == 1024){
+			byte_write = send(sock,(uint8_t*)buff,length,0);
+			// Reset buff
+			length = 0;
+		}
 		// Check connect
-		vTaskDelay(1);
+		if(byte_write == -1){
+			break;
+		}
 	}
 }
 
-
+#define NUM_MAX_SEND_QUEUE_FALSE 10
 
 static void ev_read_sensor_task(void *arg) {
+	float value = 0;
+	uint16_t num_false = 0;
 	for (;;) {
-		vTaskDelay(1);
+
+		value = 1.1;
+
+		if (xQueueSend(ev_data_queue_handle, &value,
+				(TickType_t )100) != pdPASS){
+			num_false++;
+			if(num_false > NUM_MAX_SEND_QUEUE_FALSE){
+				xQueueReset(ev_data_queue_handle);
+			}
+		}
 	}
 }
 

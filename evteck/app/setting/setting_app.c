@@ -145,7 +145,6 @@ static void transmit_data(void* arg){
 				send_tcp(*sock,(char*)buff,len);
 			}
 		}
-
 	}
 }
 static void send_tcp(const int sock,char* buff,uint16_t len){

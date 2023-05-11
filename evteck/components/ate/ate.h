@@ -27,7 +27,8 @@ struct ATE_t{
 };
 
 struct ATE_Config_t{
-
+	AFE *p_afe;
+	int gain;
 };
 
 void ate_init(ATE *p_ate,ATE_Config *p_config);

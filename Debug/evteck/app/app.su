@@ -1,4 +1,4 @@
-app.c:34:6:app_init	16	static
-app.c:43:13:do_send_data	16	static
-app.c:54:13:ev_read_sensor_task	16	static
-app.c:61:13:ev_tcp_server_data_task	232	static
+app.c:39:6:app_init	16	static
+app.c:57:13:do_send_data	1056	static
+app.c:85:13:ev_read_sensor_task	24	static
+app.c:103:13:ev_tcp_server_data_task	232	static

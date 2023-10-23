@@ -92,9 +92,9 @@ evteck/app/app.o: ../evteck/app/app.c ../evteck/app/app.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/err.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/sockets.h \
  ../evteck/app/app_config.h ../evteck/app/setting/setting_app.h \
- C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/components/ate/ate.h \
- C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/components/afe/afe.h \
- C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/board.h
+ C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/components/ate/ate.h \
+ C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/components/afe/afe.h \
+ C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/board/board.h
 
 ../evteck/app/app.h:
 
@@ -288,8 +288,8 @@ evteck/app/app.o: ../evteck/app/app.c ../evteck/app/app.h \
 
 ../evteck/app/setting/setting_app.h:
 
-C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/components/ate/ate.h:
+C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/components/ate/ate.h:
 
-C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/components/afe/afe.h:
+C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/components/afe/afe.h:
 
-C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/board.h:
+C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/board/board.h:

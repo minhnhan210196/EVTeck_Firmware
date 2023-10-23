@@ -1,6 +1,6 @@
 evteck/components/afe/afe.o: ../evteck/components/afe/afe.c \
  ../evteck/components/afe/afe.h \
- C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/spi/spi.h \
+ C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/board/spi/spi.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -30,11 +30,11 @@ evteck/components/afe/afe.o: ../evteck/components/afe/afe.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/gpio/gpio.h
+ C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/board/gpio/gpio.h
 
 ../evteck/components/afe/afe.h:
 
-C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/spi/spi.h:
+C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/board/spi/spi.h:
 
 ../Core/Inc/main.h:
 
@@ -96,4 +96,4 @@ C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/spi/spi.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
-C:/Users/Admin/Desktop/Evteck/EvTeckFirmware/evteck/board/gpio/gpio.h:
+C:/Users/Admin/Desktop/STM32/EvTeckFirmware/evteck/board/gpio/gpio.h:

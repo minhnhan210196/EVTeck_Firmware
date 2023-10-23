@@ -20,6 +20,7 @@
 #include "setting/setting_app.h"
 #include "ate/ate.h"
 #include "board.h"
+#include "afe_app.h"
 
 AFE ltc23xx;
 ATE evteck_ate;
@@ -85,17 +86,15 @@ static void do_send_data(const int sock){
 static void ev_read_sensor_task(void *arg) {
 	float value = 0;
 	uint16_t num_false = 0;
+	afe_app_init();
 	for (;;) {
-
-		value = 1.1;
-
-		if (xQueueSend(ev_data_queue_handle, &value,
-				(TickType_t )100) != pdPASS){
-			num_false++;
-			if(num_false > NUM_MAX_SEND_QUEUE_FALSE){
-				xQueueReset(ev_data_queue_handle);
-			}
-		}
+		// Start Convert
+		ltc2335_1.start_convert(&ltc2335_1);
+		ltc2335_2.start_convert(&ltc2335_2);
+		// While no busy
+		while(ltc2335_1.check_busy(&ltc2335_1));
+		// read data
+		vTaskDelay(1);
 	}
 }
 

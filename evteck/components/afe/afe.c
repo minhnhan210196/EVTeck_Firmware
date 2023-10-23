@@ -9,9 +9,9 @@
 #include "afe.h"
 #include "spi/spi.h"
 
-void LTC23XX_create_config_word(uint8_t channel, uint8_t config_number, uint32_t *config_word)
+void LTC23XX_create_config_word(uint8_t channel, uint8_t config_number, uint8_t *config_word)
 {
-  *config_word = *config_word | ((uint32_t)(config_number & 0x07) << (channel * 3));
+  *config_word = 1<<7  | 0<<6 | channel << 3 | config_number;// ((uint32_t)(config_number & 0x07) << (channel * 3));
 }
 
 // Transmits 24 bits (3 bytes) of configuration information and
@@ -19,20 +19,14 @@ void LTC23XX_create_config_word(uint8_t channel, uint8_t config_number, uint32_t
 // 24 bits: 18 bit data + 3 bit config + 3 bit channel number
 // Read back is done in a new cycle
 void LTC23XX_read(AFE *afe,//!< Chip select
-                  uint32_t config_word,     //!< 3 bytes of configutaion data for 8 channels
+                  uint8_t config_word,     //!< 3 bytes of configutaion data for 8 channels
                   uint8_t data_array[24]    //!< Data array to read in 24 bytes of data from 8 channels
                  )
 {
   int i;
   uint8_t tx_array[24];
-
-  tx_array[23] = (uint8_t)(config_word >> 16);
-  tx_array[22] = (uint8_t)(config_word >> 8);
-  tx_array[21] = (uint8_t)(config_word);
-  for (i = 20; i >= 0; --i)
-  {
-    tx_array[i] = 0;
-  }
+  memset(tx_array,0,24);
+  tx_array[23] = (uint8_t)(config_word);
   spi_write_read(afe->p_driver,tx_array, data_array, 24);
 }
 

@@ -1,0 +1,9 @@
+cli_fifo.c:44:9:fifo_create	24	static
+cli_fifo.c:59:9:fifo_add	16	static
+cli_fifo.c:70:9:fifo_get	16	static
+cli_fifo.c:81:10:fifo_get_cnt	16	static
+cli_fifo.c:98:9:fifo_is_full	16	static
+cli_fifo.c:106:9:fifo_is_empty	16	static
+cli_fifo.c:114:9:fifo_discard	24	static
+cli_fifo.c:133:13:fifo_copy_from	16	static
+cli_fifo.c:142:13:fifo_copy_to	16	static

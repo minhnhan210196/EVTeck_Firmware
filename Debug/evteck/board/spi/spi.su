@@ -1,0 +1,6 @@
+spi.c:11:6:spi_init	24	static
+spi.c:15:6:spi_read	24	static
+spi.c:18:6:spi_write	24	static
+spi.c:21:10:spi_write_read	24	static
+spi.c:25:6:spi_cs_select	16	static
+spi.c:28:6:spi_cs_deselect	16	static

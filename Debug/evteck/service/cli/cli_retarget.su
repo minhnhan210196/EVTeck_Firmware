@@ -1,0 +1,7 @@
+cli_retarget.c:85:5:retarget_init	8	static
+cli_retarget.c:96:5:serial_get_char	24	static
+cli_retarget.c:113:16:__io_putchar	16	static
+cli_retarget.c:123:9:__io_getchar	16	static
+cli_retarget.c:131:6:on_uart_data_received	16	static
+cli_retarget.c:152:5:_read	40	static
+cli_retarget.c:163:5:_write	32	static

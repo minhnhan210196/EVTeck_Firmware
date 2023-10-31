@@ -1,0 +1,12 @@
+cli_shell.c:74:6:SHELL_Init	24	static
+cli_shell.c:94:6:SHELL_Process	24	static
+cli_shell.c:262:16:HelpCommand	32	static
+cli_shell.c:280:13:ProcessCommand	296	static
+cli_shell.c:346:13:GetHistoryCommand	24	static
+cli_shell.c:374:13:AutoComplete	48	static
+cli_shell.c:424:14:StrCopy	32	static
+cli_shell.c:436:16:StrLen	24	static
+cli_shell.c:447:16:StrCompare	24	static
+cli_shell.c:457:16:ParseLine	40	static
+cli_shell.c:505:9:SHELL_RegisterCommand	24	static
+cli_shell.c:518:16:GetChar	24	static

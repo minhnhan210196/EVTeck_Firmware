@@ -1,0 +1,2 @@
+board.c:18:6:board_init	8	static
+board.c:24:6:board_deinit	4	static

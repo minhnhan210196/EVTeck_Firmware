@@ -1,0 +1,8 @@
+cli_app.c:56:9:__io_putchar	16	static
+cli_app.c:61:5:shell_printf	24	static
+cli_app.c:75:5:user_put_char	16	static
+cli_app.c:79:5:user_get_char	24	static
+cli_app.c:85:6:cli_app_start	24	static
+cli_app.c:100:6:cli_app_main_loop	16	static
+cli_app.c:104:6:cli_app_on_data_received	16	static
+cli_app.c:111:16:cli_reset_system	24	static

@@ -304,10 +304,10 @@ static void MX_GPIO_Init(void)
                           |MUX_B4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, MUX_A1_Pin|MUX_B1_Pin|MUX_B2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, MUX_A1_Pin|MUX_B1_Pin|MUX_A2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, MUX_B2G0_Pin|MUX_A3_Pin|ADC_CNV2_Pin|ADC_RS2_Pin
+  HAL_GPIO_WritePin(GPIOG, MUX_B2_Pin|MUX_A3_Pin|ADC_CNV2_Pin|ADC_RS2_Pin
                           |ADC_CS2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -322,16 +322,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MUX_A1_Pin MUX_B1_Pin MUX_B2_Pin */
-  GPIO_InitStruct.Pin = MUX_A1_Pin|MUX_B1_Pin|MUX_B2_Pin;
+  /*Configure GPIO pins : MUX_A1_Pin MUX_B1_Pin MUX_A2_Pin */
+  GPIO_InitStruct.Pin = MUX_A1_Pin|MUX_B1_Pin|MUX_A2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MUX_B2G0_Pin MUX_A3_Pin ADC_CNV2_Pin ADC_RS2_Pin
+  /*Configure GPIO pins : MUX_B2_Pin MUX_A3_Pin ADC_CNV2_Pin ADC_RS2_Pin
                            ADC_CS2_Pin */
-  GPIO_InitStruct.Pin = MUX_B2G0_Pin|MUX_A3_Pin|ADC_CNV2_Pin|ADC_RS2_Pin
+  GPIO_InitStruct.Pin = MUX_B2_Pin|MUX_A3_Pin|ADC_CNV2_Pin|ADC_RS2_Pin
                           |ADC_CS2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;

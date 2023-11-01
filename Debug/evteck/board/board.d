@@ -1,6 +1,6 @@
 evteck/board/board.o: ../evteck/board/board.c ../evteck/board/board.h \
- ../evteck/board/gpio/gpio.h ../Core/Inc/main.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
+ ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -29,12 +29,21 @@ evteck/board/board.o: ../evteck/board/board.c ../evteck/board/board.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../evteck/board/spi/spi.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h
+ C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h \
+ C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 
 ../evteck/board/board.h:
 
-../evteck/board/gpio/gpio.h:
+C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
 
 ../Core/Inc/main.h:
 
@@ -96,6 +105,24 @@ evteck/board/board.o: ../evteck/board/board.c ../evteck/board/board.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
-../evteck/board/spi/spi.h:
+C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h:
 
 C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+
+../Core/Inc/FreeRTOSConfig.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:

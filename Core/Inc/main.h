@@ -66,10 +66,10 @@ void Error_Handler(void);
 #define MUX_A1_GPIO_Port GPIOF
 #define MUX_B1_Pin GPIO_PIN_14
 #define MUX_B1_GPIO_Port GPIOF
-#define MUX_B2_Pin GPIO_PIN_15
-#define MUX_B2_GPIO_Port GPIOF
-#define MUX_B2G0_Pin GPIO_PIN_0
-#define MUX_B2G0_GPIO_Port GPIOG
+#define MUX_A2_Pin GPIO_PIN_15
+#define MUX_A2_GPIO_Port GPIOF
+#define MUX_B2_Pin GPIO_PIN_0
+#define MUX_B2_GPIO_Port GPIOG
 #define MUX_A3_Pin GPIO_PIN_1
 #define MUX_A3_GPIO_Port GPIOG
 #define MUX_B3_Pin GPIO_PIN_7

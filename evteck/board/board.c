@@ -9,6 +9,9 @@
 #include "board.h"
 #include "gpio.h"
 #include "spi.h"
+#include <main.h>
+
+extern TIM_HandleTypeDef htim1;
 
 #define RTOS 1
 
@@ -79,7 +82,7 @@ void board_deinit(){
 }
 void bsp_delay_ms(unsigned long ms){
 #if RTOS
-	vTaskDelay(ms);
+	vTaskDelay(pdMS_TO_TICKS(ms));
 #else
 	__HAL_TIM_SET_COUNTER(&htim1,0);
 	while(__HAL_TIM_GET_COUNTER(&htim1) < ms*1000);

@@ -43,11 +43,17 @@ struct AFE_t{
 
 	BSP_GPIO *busy;
 
-	uint32_t data_channel[8];
-	uint8_t num_channel;
+	uint16_t data_channel[8];
+
+	struct data_type_t{
+		uint8_t channel;
+		uint8_t softSpan;
+		uint16_t value;
+	}data_type;
+
+	uint8_t config_word[8];
 
 	AFE_SoftSpan_Code_t softSpan;
-
 };
 
 void LTC23XX_init(AFE *afe);
@@ -58,6 +64,9 @@ int afe_reset(AFE *afe);
 int afe_power_down(AFE *afe);
 int afe_busy(AFE *afe);
 int afe_read(AFE *afe,uint8_t config_word,uint8_t data_array[24]);
+int afe_read_all(AFE *afe);
+uint8_t afe_create_config_word(uint8_t channel,AFE_SoftSpan_Code_t softspan,uint8_t *configword);
+
 
 static inline uint32_t LTC23XX_get_data_channel(AFE *afe,uint8_t p_channel){
 	return afe->data_channel[p_channel];

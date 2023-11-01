@@ -9,13 +9,24 @@
 #include "afe.h"
 #include "spi/spi.h"
 #include "board.h"
+#include <string.h>
+
+#define DATA_MASK 0b111 // 0x07
+#define CHANNEL_MASK 0b111000 // 0x38
+#define SOFTSPAN_MASK 0b111111111111111100000000 // 0xFFFF00
+
 
 int afe_init(AFE *afe){
+
+	for(uint16_t i = 0;i<8;i++){
+		afe_create_config_word(i, afe->softSpan, &afe->config_word[i]);
+	}
+
 	return 0;
 }
 int afe_start_convert(AFE *afe){
 	gpio_write_pin(afe->cnv,BSP_GPIO_HIGH);
-	bsp_delay_us(50);
+	bsp_delay_us(1);
 	gpio_write_pin(afe->cnv,BSP_GPIO_LOW);
 	return 0;
 }
@@ -33,13 +44,39 @@ int afe_busy(AFE *afe){
 	return gpio_read_pin(afe->busy);
 }
 int afe_read(AFE *afe,uint8_t config_word,uint8_t data_array[24]){
-	  int i;
 	  uint8_t tx_array[24];
 	  memset(tx_array,0,24);
 	  tx_array[23] = (uint8_t)(config_word);
 	  return spi_write_read(afe->p_driver,tx_array, data_array, 24);
 }
 
+int afe_read_all(AFE *afe){
+	  uint8_t tx_array[24];
+	  uint8_t data_array[24];
+	  memset(tx_array,0,24);
+	  for(uint16_t i = 0;i<8;i++){
+		  tx_array[23-i] = (uint8_t)(afe->config_word[i]);
+	  }
+	  afe_start_convert(afe);
+	  while(afe_busy(afe));
+	  if(spi_write_read(afe->p_driver,tx_array, data_array, 24) == 0){
+		  for(uint16_t i = 0;i<24;i += 3){
+			  uint32_t data = (uint32_t)data_array[i] << 16 | (uint32_t)data_array[i+1] << 8 | data_array[i+2];
+			  afe->data_type.softSpan = data & SOFTSPAN_MASK;
+			  afe->data_type.channel = data & CHANNEL_MASK >> 3;
+			  afe->data_type.value = data & DATA_MASK >> 8;
+			  afe->data_channel[afe->data_type.channel] = afe->data_type.value;
+		  }
+		  return 0;
+	  }
+	  return -1;
+}
+
+uint8_t afe_create_config_word(uint8_t channel,AFE_SoftSpan_Code_t softspan,uint8_t *configword){
+	*configword = 1<<7  | 0<<6 | channel << 3 | softspan;// ((uint32_t)(config_number & 0x07) << (channel * 3));
+	uint8_t res = *configword;
+	return res;
+}
 
 void LTC23XX_create_config_word(uint8_t channel, uint8_t config_number, uint8_t *config_word)
 {
@@ -55,7 +92,6 @@ void LTC23XX_read(AFE *afe,//!< Chip select
                   uint8_t data_array[24]    //!< Data array to read in 24 bytes of data from 8 channels
                  )
 {
-  int i;
   uint8_t tx_array[24];
   memset(tx_array,0,24);
   tx_array[23] = (uint8_t)(config_word);

@@ -14,7 +14,7 @@ void spi_init(BSP_SPI *spi, SPI_HandleTypeDef *driver,BSP_GPIO *cs_pin){
 }
 void spi_read(BSP_SPI *spi,uint8_t *data,uint16_t len){
 	spi_cs_select(spi);
-	HAL_SPI_Receive(spi->p_cs,data,len,1000);
+	HAL_SPI_Receive(spi->p_driver,data,len,1000);
 	spi_cs_deselect(spi);
 }
 void spi_write(BSP_SPI *spi,uint8_t *data,uint16_t len){

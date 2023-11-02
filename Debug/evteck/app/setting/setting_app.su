@@ -2,4 +2,4 @@ setting_app.c:29:6:setting_app	16	static
 setting_app.c:37:13:do_retransmit	168	static
 setting_app.c:65:13:ev_tcp_server_config_task	232	static
 setting_app.c:134:13:transmit_data	1048	static
-setting_app.c:150:13:send_tcp	24	static
+setting_app.c:151:13:send_tcp	24	static

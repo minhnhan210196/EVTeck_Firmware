@@ -42,11 +42,11 @@ static void do_send_data(const int sock);
 
 void app_init(void) {
 	ev_data_queue_handle = xQueueCreate(1024,sizeof(float));
-	xTaskCreate(ev_read_sensor_task, "read sensor", 1024, NULL,
-			10, &ev_read_sensor_handle);
+	xTaskCreate(ev_read_sensor_task, "read sensor", 1024*2, NULL,
+			configMAX_PRIORITIES, &ev_read_sensor_handle);
 	setting_app();
-	xTaskCreate(ev_tcp_server_data_task, "tcp server_dt", 1024, NULL,
-			10 - 1, &ev_tcp_server_data_handle);
+	xTaskCreate(ev_tcp_server_data_task, "tcp server_dt", 1024*2, NULL,
+			configMAX_PRIORITIES - 1, &ev_tcp_server_data_handle);
 }
 
 #define MAX_BUFF_LENGTH 1024
@@ -57,29 +57,32 @@ typedef union{
 }Data_Type_t;
 
 static void do_send_data(const int sock){
-	uint8_t buff[MAX_BUFF_LENGTH];
+	char buff[MAX_BUFF_LENGTH];
 	uint16_t length = 0;
 	Data_Type_t data_sensor;
 	int byte_write = 0;
-	while(1){
-		// Read Data
-		if(xQueueReceive(ev_data_queue_handle,&data_sensor.fl_t, (TickType_t) 10) == pdPASS){
-			for(uint8_t i = 0;i<4;i++){
-				buff[length+i] = data_sensor.u8_t[i];
-			}
-			length += 4;
-		}
-		// Send Data
-		if(length == 1024){
-			byte_write = send(sock,(uint8_t*)buff,length,0);
-			// Reset buff
-			length = 0;
-		}
-		// Check connect
-		if(byte_write == -1){
-			break;
-		}
-	}
+	sprintf(buff,"Hello guy\r\n");
+	length = strlen(buff);
+//	while(1){
+//		// Read Data
+//		if(xQueueReceive(ev_data_queue_handle,&data_sensor.fl_t, (TickType_t) 10) == pdPASS){
+//			for(uint8_t i = 0;i<4;i++){
+//				buff[length+i] = data_sensor.u8_t[i];
+//			}
+//			length += 4;
+//		}
+//		// Send Data
+//		if(length == 1024){
+//			byte_write = send(sock,(uint8_t*)buff,length,0);
+//			// Reset buff
+//			length = 0;
+//		}
+//		// Check connect
+//		if(byte_write == -1){
+//			break;
+//		}
+//	}
+	byte_write = send(sock,(uint8_t*)buff,length,0);
 }
 
 #define NUM_MAX_SEND_QUEUE_FALSE 10

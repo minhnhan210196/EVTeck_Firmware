@@ -66,7 +66,7 @@ static void ev_tcp_server_config_task(void *arg) {
 
 	cli_app_start();
     char addr_str[128];
-    int addr_family = (int)arg;
+    int addr_family = (int)AF_INET;
     int ip_protocol = 0;
     int keepAlive = 1;
     int keepIdle = KEEPALIVE_IDLE;
@@ -143,6 +143,7 @@ static void transmit_data(void* arg){
 		else{
 			if(len>0){
 				send_tcp(*sock,(char*)buff,len);
+				len = 0;
 			}
 		}
 	}

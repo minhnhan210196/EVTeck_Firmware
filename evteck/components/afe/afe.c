@@ -26,7 +26,7 @@ int afe_init(AFE *afe){
 }
 int afe_start_convert(AFE *afe){
 	gpio_write_pin(afe->cnv,BSP_GPIO_HIGH);
-	bsp_delay_us(1);
+//	bsp_delay_us(1);
 	gpio_write_pin(afe->cnv,BSP_GPIO_LOW);
 	return 0;
 }

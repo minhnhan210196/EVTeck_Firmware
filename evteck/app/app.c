@@ -17,14 +17,17 @@
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
+#include "timer.h"
 #include "setting/setting_app.h"
 #include "ate.h"
 #include "board.h"
 #include "afe_app.h"
+#include "main.h"
+#include <string.h>
 
-AFE ltc23xx;
-ATE evteck_ate;
-ATE_Config ate_config = {.gain = 1,.p_afe = &ltc23xx};
+extern TIM_HandleTypeDef htim2;
+
+
 
 
 
@@ -38,14 +41,12 @@ static void ev_tcp_server_data_task(void* arg);
 static void do_send_data(const int sock);
 
 void app_init(void) {
-	board_init();
-	ate_init(&evteck_ate, &ate_config);
 	ev_data_queue_handle = xQueueCreate(1024,sizeof(float));
 	xTaskCreate(ev_read_sensor_task, "read sensor", 1024, NULL,
-			configMAX_PRIORITIES, &ev_read_sensor_handle);
+			10, &ev_read_sensor_handle);
 	setting_app();
 	xTaskCreate(ev_tcp_server_data_task, "tcp server_dt", 1024, NULL,
-			configMAX_PRIORITIES - 1, &ev_tcp_server_data_handle);
+			10 - 1, &ev_tcp_server_data_handle);
 }
 
 #define MAX_BUFF_LENGTH 1024
@@ -82,17 +83,29 @@ static void do_send_data(const int sock){
 }
 
 #define NUM_MAX_SEND_QUEUE_FALSE 10
-
+uint32_t tick_us = 0;
 static void ev_read_sensor_task(void *arg) {
-	afe_app_init();
-	for (;;) {
-		// Start Convert
 
-		// While no busy
-
-		// read data
+	  afe_app_init();
+	  HAL_TIM_Base_Start(&htim2);
+	  while(1){
+		tick_us = __HAL_TIM_GET_COUNTER(&htim2);
+		__HAL_TIM_SET_COUNTER(&htim2,0);
+		for (uint16_t i = 0; i < 300; i++) {
+			static uint8_t channel = 0;
+			uint8_t data[4] = { 0 };
+			uint8_t config = 0;
+			afe_create_config_word(channel, _110, &config);
+			afe_read(&ltc2335_1, config, data);
+			afe_convert(&ltc2335_1, data);
+			afe_read(&ltc2335_2, config, data);
+			afe_convert(&ltc2335_2, data);
+			channel++;
+			if (channel > 2)
+				channel = 0;
+		}
 		vTaskDelay(1);
-	}
+	  }
 }
 
 
@@ -166,4 +179,11 @@ CLEAN_UP:
 }
 
 
+void app_read_sensor_task(void *arg){
+	TIM_HandleTypeDef *htim = (TIM_HandleTypeDef*)arg;
+	if(htim->Instance == htim2.Instance){
+
+	}
+
+}
 

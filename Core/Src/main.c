@@ -24,8 +24,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "afe_app.h"
 #include "board.h"
+#include "app.h"
 #include <string.h>
 /* USER CODE END Includes */
 
@@ -77,7 +77,7 @@ void StartDefaultTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint32_t tick_us = 0;
+
 /* USER CODE END 0 */
 
 /**
@@ -114,25 +114,8 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim1);
-  HAL_TIM_Base_Start(&htim2);
   board_init();
-  afe_app_init();
-  uint8_t channel = 0;
-  uint8_t data[24];
-  memset(data,0,24);
 
-  while(1){
-	  __HAL_TIM_SET_COUNTER(&htim2,0);
-	  uint8_t config = 0;
-	  afe_create_config_word(channel, _110, &config);
-	  afe_read(&ltc2335_1, config, data);
-	  afe_convert(&ltc2335_1,data);
-	  afe_read(&ltc2335_2, config, data);
-	  afe_convert(&ltc2335_2,data);
-	  tick_us = __HAL_TIM_GET_COUNTER(&htim2);
-	  channel++;
-	  if(channel > 2) channel = 0;
-  }
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -467,6 +450,7 @@ void StartDefaultTask(void *argument)
   /* init code for LWIP */
   MX_LWIP_Init();
   /* USER CODE BEGIN 5 */
+  app_init();
   /* Infinite loop */
   for(;;)
   {
@@ -492,7 +476,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if(htim->Instance == htim2.Instance){
+	  app_read_sensor_task((void*)htim);
+  }
   /* USER CODE END Callback 1 */
 }
 

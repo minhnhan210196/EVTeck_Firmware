@@ -74,13 +74,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/system/arch/sys_arch.h \
  ../LWIP/Target/ethernetif.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/afe_app/afe_app.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/components/afe/afe.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h \
  C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/board.h \
  C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h
+ C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
+ C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
+ C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/app.h
 
 ../Core/Inc/main.h:
 
@@ -234,16 +232,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/afe_app/afe_app.h:
-
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/components/afe/afe.h:
-
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
-
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h:
-
 C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/board.h:
 
 C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h:
 
 C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
+
+C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
+
+C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/app.h:

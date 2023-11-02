@@ -80,8 +80,8 @@ evteck/app/setting/setting_app.o: ../evteck/app/setting/setting_app.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/errno.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/err.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/sockets.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/app_config.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/service/cli/cli_retarget.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app_config.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/cli/cli_retarget.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
@@ -252,9 +252,9 @@ evteck/app/setting/setting_app.o: ../evteck/app/setting/setting_app.c \
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/sockets.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/app_config.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app_config.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/service/cli/cli_retarget.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/cli/cli_retarget.h:
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 

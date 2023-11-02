@@ -85,16 +85,14 @@ evteck/app/app.o: ../evteck/app/app.c ../evteck/app/app.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/timer/timer.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/timer/timer.h \
  ../evteck/app/setting/setting_app.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/components/ate/ate.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/components/afe/afe.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/board.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h \
- C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/afe_app/afe_app.h
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/components/ate/ate.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/components/afe/afe.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/gpio/gpio.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/board.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/afe_app/afe_app.h
 
 ../evteck/app/app.h:
 
@@ -272,22 +270,18 @@ evteck/app/app.o: ../evteck/app/app.c ../evteck/app/app.h \
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/timer/timer.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/timer/timer.h:
 
 ../evteck/app/setting/setting_app.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/components/ate/ate.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/components/ate/ate.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/components/afe/afe.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/components/afe/afe.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/gpio/gpio.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/board.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/board.h:
 
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/spi/spi.h:
-
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/board/gpio/gpio.h:
-
-C:/Users/Admin/STM32CubeIDE/workspace_1.6.0/EVTeck_Firmware/evteck/app/afe_app/afe_app.h:
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/afe_app/afe_app.h:

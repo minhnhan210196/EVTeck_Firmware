@@ -9,7 +9,7 @@
 #define BOARD_SPI_SPI_H_
 
 #include "main.h"
-#include "gpio/gpio.h"
+#include "gpio.h"
 
 typedef struct BSP_SPI_t BSP_SPI;
 

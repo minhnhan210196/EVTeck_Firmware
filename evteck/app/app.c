@@ -111,7 +111,7 @@ static void ev_read_sensor_task(void *arg) {
 
 static void ev_tcp_server_data_task(void* arg){
     char addr_str[128];
-    int addr_family = (int)arg;
+    int addr_family = AF_INET;
     int ip_protocol = 0;
     int keepAlive = 1;
     int keepIdle = KEEPALIVE_IDLE;

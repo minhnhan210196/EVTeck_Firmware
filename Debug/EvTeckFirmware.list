@@ -1,5 +1,5 @@
 
-EVTeck_Firmware.elf:     file format elf32-littlearm
+EvTeckFirmware.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -35,15 +35,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_ranges 00002760  00000000  00000000  00094f90  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00015b61  00000000  00000000  000976f0  2**0
+ 16 .debug_macro  00015b45  00000000  00000000  000976f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00041bd7  00000000  00000000  000ad251  2**0
+ 17 .debug_line   00041ba5  00000000  00000000  000ad235  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000f410a  00000000  00000000  000eee28  2**0
+ 18 .debug_str    000f4108  00000000  00000000  000eedda  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  001e2f32  2**0
+ 19 .comment      00000053  00000000  00000000  001e2ee2  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000b25c  00000000  00000000  001e2f88  2**2
+ 20 .debug_frame  0000b25c  00000000  00000000  001e2f38  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -67727,8 +67727,8 @@ static void ev_tcp_server_data_task(void* arg){
  801899c:	af02      	add	r7, sp, #8
  801899e:	6078      	str	r0, [r7, #4]
     char addr_str[128];
-    int addr_family = (int)arg;
- 80189a0:	687b      	ldr	r3, [r7, #4]
+    int addr_family = AF_INET;
+ 80189a0:	2302      	movs	r3, #2
  80189a2:	f8c7 30d0 	str.w	r3, [r7, #208]	; 0xd0
     int ip_protocol = 0;
  80189a6:	2300      	movs	r3, #0

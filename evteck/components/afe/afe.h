@@ -9,8 +9,8 @@
 #define COMPONENTS_AFE_AFE_H_
 
 #include "stdint.h"
-#include "gpio/gpio.h"
-#include "spi/spi.h"
+#include "gpio.h"
+#include "spi.h"
 #define VREF 4.096
 #define POW2_18 262144
 #define POW2_17 131072

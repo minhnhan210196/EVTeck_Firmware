@@ -28869,7 +28869,7 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_ranges  0x00000000000026d0       0x40 evteck/service/cli/cli_retarget.o
  .debug_ranges  0x0000000000002710       0x68 evteck/service/cli/cli_shell.o
 
-.debug_macro    0x0000000000000000    0x364fe
+.debug_macro    0x0000000000000000    0x36504
  .debug_macro   0x0000000000000000      0x3f0 Core/Src/freertos.o
  .debug_macro   0x00000000000003f0      0xaa8 Core/Src/freertos.o
  .debug_macro   0x0000000000000e98      0x174 Core/Src/freertos.o
@@ -29037,103 +29037,103 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000026c60       0x16 LWIP/App/lwip.o
  .debug_macro   0x0000000000026c76       0x10 LWIP/App/lwip.o
  .debug_macro   0x0000000000026c86       0x5e LWIP/App/lwip.o
- .debug_macro   0x0000000000026ce4      0x6af LWIP/Target/ethernetif.o
- .debug_macro   0x0000000000027393       0xb9 LWIP/Target/ethernetif.o
- .debug_macro   0x000000000002744c      0x1c3 LWIP/Target/ethernetif.o
- .debug_macro   0x000000000002760f      0x3e1 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x00000000000279f0       0x10 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027a00       0x10 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027a10       0xd3 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027ae3       0x91 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027b74       0x8d Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027c01       0x9a Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027c9b       0x22 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x0000000000027cbd      0x199 Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_macro   0x0000000000027e56      0x228 Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_macro   0x000000000002807e       0x87 Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_macro   0x0000000000028105      0x291 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_macro   0x0000000000028396       0x10 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_macro   0x00000000000283a6      0x1ee Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_macro   0x0000000000028594       0x97 Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_macro   0x000000000002862b      0x233 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_macro   0x000000000002885e      0x1c0 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_macro   0x0000000000028a1e      0x761 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x000000000002917f       0x3a Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000291b9       0xda Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x0000000000029293      0x13b Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000293ce       0x2e Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000293fc       0xea Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000294e6       0x10 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000294f6       0x4d Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x0000000000029543       0x16 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x0000000000029559       0x16 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x000000000002956f       0x4c Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000295bb       0x23 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000295de       0x2e Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x000000000002960c       0x70 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x000000000002967c       0xf9 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x0000000000029775       0x7c Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000297f1      0x1d7 Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_macro   0x00000000000299c8      0x73e Middlewares/Third_Party/LwIP/src/api/api_msg.o
- .debug_macro   0x000000000002a106       0x40 Middlewares/Third_Party/LwIP/src/api/api_msg.o
- .debug_macro   0x000000000002a146      0x566 Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_macro   0x000000000002a6ac      0x320 Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_macro   0x000000000002a9cc      0x55c Middlewares/Third_Party/LwIP/src/api/netbuf.o
- .debug_macro   0x000000000002af28      0x838 Middlewares/Third_Party/LwIP/src/api/sockets.o
- .debug_macro   0x000000000002b760      0x6b6 Middlewares/Third_Party/LwIP/src/api/tcpip.o
- .debug_macro   0x000000000002be16      0x4b4 Middlewares/Third_Party/LwIP/src/core/def.o
- .debug_macro   0x000000000002c2ca      0x795 Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x000000000002ca5f       0x35 Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x000000000002ca94      0x56f Middlewares/Third_Party/LwIP/src/core/ip.o
- .debug_macro   0x000000000002d003      0x664 Middlewares/Third_Party/LwIP/src/core/mem.o
- .debug_macro   0x000000000002d667      0x7ee Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x000000000002de55      0x11b Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x000000000002df70       0x16 Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x000000000002df86       0xe0 Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x000000000002e066      0x72b Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_macro   0x000000000002e791       0xc0 Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_macro   0x000000000002e851      0x6cd Middlewares/Third_Party/LwIP/src/core/pbuf.o
- .debug_macro   0x000000000002ef1e      0x60a Middlewares/Third_Party/LwIP/src/core/tcp.o
- .debug_macro   0x000000000002f528      0x5f7 Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_macro   0x000000000002fb1f       0x1c Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_macro   0x000000000002fb3b      0x605 Middlewares/Third_Party/LwIP/src/core/tcp_out.o
- .debug_macro   0x0000000000030140      0x73e Middlewares/Third_Party/LwIP/src/core/timeouts.o
- .debug_macro   0x000000000003087e      0x608 Middlewares/Third_Party/LwIP/src/core/udp.o
- .debug_macro   0x0000000000030e86      0x605 Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
- .debug_macro   0x000000000003148b      0x5c3 Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
- .debug_macro   0x0000000000031a4e      0x642 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
- .debug_macro   0x0000000000032090      0x52f Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
- .debug_macro   0x00000000000325bf      0x5ea Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_macro   0x0000000000032ba9       0x10 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_macro   0x0000000000032bb9      0x5e8 Middlewares/Third_Party/LwIP/src/netif/ethernet.o
- .debug_macro   0x00000000000331a1      0x5b1 Middlewares/Third_Party/LwIP/system/OS/sys_arch.o
- .debug_macro   0x0000000000033752       0x11 Middlewares/Third_Party/LwIP/system/OS/sys_arch.o
- .debug_macro   0x0000000000033763      0x21e evteck/app/afe_app/afe_app.o
- .debug_macro   0x0000000000033981       0x28 evteck/app/afe_app/afe_app.o
- .debug_macro   0x00000000000339a9      0x788 evteck/app/app.o
- .debug_macro   0x0000000000034131       0x28 evteck/app/app.o
- .debug_macro   0x0000000000034159      0x61e evteck/app/setting/cli_app.o
- .debug_macro   0x0000000000034777       0x22 evteck/app/setting/cli_app.o
- .debug_macro   0x0000000000034799       0x16 evteck/app/setting/cli_app.o
- .debug_macro   0x00000000000347af       0x97 evteck/app/setting/cli_app.o
- .debug_macro   0x0000000000034846       0xfd evteck/app/setting/cli_app.o
- .debug_macro   0x0000000000034943       0x4c evteck/app/setting/cli_app.o
- .debug_macro   0x000000000003498f       0x10 evteck/app/setting/cli_app.o
- .debug_macro   0x000000000003499f       0x34 evteck/app/setting/cli_app.o
- .debug_macro   0x00000000000349d3       0x3a evteck/app/setting/cli_app.o
- .debug_macro   0x0000000000034a0d       0x41 evteck/app/setting/cli_app.o
- .debug_macro   0x0000000000034a4e      0x738 evteck/app/setting/setting_app.o
- .debug_macro   0x0000000000035186       0x6c evteck/app/setting/setting_app.o
- .debug_macro   0x00000000000351f2      0x310 evteck/board/board.o
- .debug_macro   0x0000000000035502      0x1f1 evteck/board/gpio/gpio.o
- .debug_macro   0x00000000000356f3      0x1fb evteck/board/spi/spi.o
- .debug_macro   0x00000000000358ee      0x2f8 evteck/components/afe/afe.o
- .debug_macro   0x0000000000035be6      0x229 evteck/service/cli/cli_fifo.o
- .debug_macro   0x0000000000035e0f      0x3a8 evteck/service/cli/cli_retarget.o
- .debug_macro   0x00000000000361b7       0x2e evteck/service/cli/cli_retarget.o
- .debug_macro   0x00000000000361e5      0x2cf evteck/service/cli/cli_shell.o
- .debug_macro   0x00000000000364b4       0x16 evteck/service/cli/cli_shell.o
- .debug_macro   0x00000000000364ca       0x34 evteck/service/cli/cli_shell.o
+ .debug_macro   0x0000000000026ce4      0x6b5 LWIP/Target/ethernetif.o
+ .debug_macro   0x0000000000027399       0xb9 LWIP/Target/ethernetif.o
+ .debug_macro   0x0000000000027452      0x1c3 LWIP/Target/ethernetif.o
+ .debug_macro   0x0000000000027615      0x3e1 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x00000000000279f6       0x10 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027a06       0x10 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027a16       0xd3 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027ae9       0x91 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027b7a       0x8d Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027c07       0x9a Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027ca1       0x22 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0000000000027cc3      0x199 Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_macro   0x0000000000027e5c      0x228 Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_macro   0x0000000000028084       0x87 Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_macro   0x000000000002810b      0x291 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_macro   0x000000000002839c       0x10 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_macro   0x00000000000283ac      0x1ee Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_macro   0x000000000002859a       0x97 Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_macro   0x0000000000028631      0x233 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_macro   0x0000000000028864      0x1c0 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_macro   0x0000000000028a24      0x761 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029185       0x3a Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000291bf       0xda Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029299      0x13b Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000293d4       0x2e Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029402       0xea Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000294ec       0x10 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000294fc       0x4d Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029549       0x16 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x000000000002955f       0x16 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029575       0x4c Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000295c1       0x23 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000295e4       0x2e Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029612       0x70 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x0000000000029682       0xf9 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x000000000002977b       0x7c Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000297f7      0x1d7 Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_macro   0x00000000000299ce      0x73e Middlewares/Third_Party/LwIP/src/api/api_msg.o
+ .debug_macro   0x000000000002a10c       0x40 Middlewares/Third_Party/LwIP/src/api/api_msg.o
+ .debug_macro   0x000000000002a14c      0x566 Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_macro   0x000000000002a6b2      0x320 Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_macro   0x000000000002a9d2      0x55c Middlewares/Third_Party/LwIP/src/api/netbuf.o
+ .debug_macro   0x000000000002af2e      0x838 Middlewares/Third_Party/LwIP/src/api/sockets.o
+ .debug_macro   0x000000000002b766      0x6b6 Middlewares/Third_Party/LwIP/src/api/tcpip.o
+ .debug_macro   0x000000000002be1c      0x4b4 Middlewares/Third_Party/LwIP/src/core/def.o
+ .debug_macro   0x000000000002c2d0      0x795 Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x000000000002ca65       0x35 Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x000000000002ca9a      0x56f Middlewares/Third_Party/LwIP/src/core/ip.o
+ .debug_macro   0x000000000002d009      0x664 Middlewares/Third_Party/LwIP/src/core/mem.o
+ .debug_macro   0x000000000002d66d      0x7ee Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x000000000002de5b      0x11b Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x000000000002df76       0x16 Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x000000000002df8c       0xe0 Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x000000000002e06c      0x72b Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_macro   0x000000000002e797       0xc0 Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_macro   0x000000000002e857      0x6cd Middlewares/Third_Party/LwIP/src/core/pbuf.o
+ .debug_macro   0x000000000002ef24      0x60a Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_macro   0x000000000002f52e      0x5f7 Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_macro   0x000000000002fb25       0x1c Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_macro   0x000000000002fb41      0x605 Middlewares/Third_Party/LwIP/src/core/tcp_out.o
+ .debug_macro   0x0000000000030146      0x73e Middlewares/Third_Party/LwIP/src/core/timeouts.o
+ .debug_macro   0x0000000000030884      0x608 Middlewares/Third_Party/LwIP/src/core/udp.o
+ .debug_macro   0x0000000000030e8c      0x605 Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
+ .debug_macro   0x0000000000031491      0x5c3 Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
+ .debug_macro   0x0000000000031a54      0x642 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
+ .debug_macro   0x0000000000032096      0x52f Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
+ .debug_macro   0x00000000000325c5      0x5ea Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_macro   0x0000000000032baf       0x10 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_macro   0x0000000000032bbf      0x5e8 Middlewares/Third_Party/LwIP/src/netif/ethernet.o
+ .debug_macro   0x00000000000331a7      0x5b1 Middlewares/Third_Party/LwIP/system/OS/sys_arch.o
+ .debug_macro   0x0000000000033758       0x11 Middlewares/Third_Party/LwIP/system/OS/sys_arch.o
+ .debug_macro   0x0000000000033769      0x21e evteck/app/afe_app/afe_app.o
+ .debug_macro   0x0000000000033987       0x28 evteck/app/afe_app/afe_app.o
+ .debug_macro   0x00000000000339af      0x788 evteck/app/app.o
+ .debug_macro   0x0000000000034137       0x28 evteck/app/app.o
+ .debug_macro   0x000000000003415f      0x61e evteck/app/setting/cli_app.o
+ .debug_macro   0x000000000003477d       0x22 evteck/app/setting/cli_app.o
+ .debug_macro   0x000000000003479f       0x16 evteck/app/setting/cli_app.o
+ .debug_macro   0x00000000000347b5       0x97 evteck/app/setting/cli_app.o
+ .debug_macro   0x000000000003484c       0xfd evteck/app/setting/cli_app.o
+ .debug_macro   0x0000000000034949       0x4c evteck/app/setting/cli_app.o
+ .debug_macro   0x0000000000034995       0x10 evteck/app/setting/cli_app.o
+ .debug_macro   0x00000000000349a5       0x34 evteck/app/setting/cli_app.o
+ .debug_macro   0x00000000000349d9       0x3a evteck/app/setting/cli_app.o
+ .debug_macro   0x0000000000034a13       0x41 evteck/app/setting/cli_app.o
+ .debug_macro   0x0000000000034a54      0x738 evteck/app/setting/setting_app.o
+ .debug_macro   0x000000000003518c       0x6c evteck/app/setting/setting_app.o
+ .debug_macro   0x00000000000351f8      0x310 evteck/board/board.o
+ .debug_macro   0x0000000000035508      0x1f1 evteck/board/gpio/gpio.o
+ .debug_macro   0x00000000000356f9      0x1fb evteck/board/spi/spi.o
+ .debug_macro   0x00000000000358f4      0x2f8 evteck/components/afe/afe.o
+ .debug_macro   0x0000000000035bec      0x229 evteck/service/cli/cli_fifo.o
+ .debug_macro   0x0000000000035e15      0x3a8 evteck/service/cli/cli_retarget.o
+ .debug_macro   0x00000000000361bd       0x2e evteck/service/cli/cli_retarget.o
+ .debug_macro   0x00000000000361eb      0x2cf evteck/service/cli/cli_shell.o
+ .debug_macro   0x00000000000364ba       0x16 evteck/service/cli/cli_shell.o
+ .debug_macro   0x00000000000364d0       0x34 evteck/service/cli/cli_shell.o
 
 .debug_line     0x0000000000000000    0x42596
  .debug_line    0x0000000000000000      0x9f3 Core/Src/freertos.o
@@ -29200,7 +29200,7 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000000000040cf8      0xa3b evteck/service/cli/cli_retarget.o
  .debug_line    0x0000000000041733      0xe63 evteck/service/cli/cli_shell.o
 
-.debug_str      0x0000000000000000    0xf41e3
+.debug_str      0x0000000000000000    0xf41bf
  .debug_str     0x0000000000000000    0xd2990 Core/Src/freertos.o
                                       0xd2d07 (size before relaxing)
  .debug_str     0x00000000000d2990     0xb399 Core/Src/main.o
@@ -29239,93 +29239,93 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                                       0xcb6cb (size before relaxing)
  .debug_str     0x00000000000e1e81      0x390 LWIP/App/lwip.o
                                       0xdd601 (size before relaxing)
- .debug_str     0x00000000000e2211      0x32e LWIP/Target/ethernetif.o
-                                      0xdde59 (size before relaxing)
- .debug_str     0x00000000000e253f     0x2ac9 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_str     0x00000000000e2211      0x30a LWIP/Target/ethernetif.o
+                                      0xdde5a (size before relaxing)
+ .debug_str     0x00000000000e251b     0x2ac9 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
                                       0xd538a (size before relaxing)
- .debug_str     0x00000000000e5008      0x12d Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_str     0x00000000000e4fe4      0x12d Middlewares/Third_Party/FreeRTOS/Source/list.o
                                        0xab6d (size before relaxing)
- .debug_str     0x00000000000e5135      0x92d Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_str     0x00000000000e5111      0x92d Middlewares/Third_Party/FreeRTOS/Source/queue.o
                                        0xc4ea (size before relaxing)
- .debug_str     0x00000000000e5a62     0x1357 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_str     0x00000000000e5a3e     0x1357 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
                                        0xd0fe (size before relaxing)
- .debug_str     0x00000000000e6db9      0x620 Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_str     0x00000000000e6d95      0x620 Middlewares/Third_Party/FreeRTOS/Source/timers.o
                                        0xca70 (size before relaxing)
- .debug_str     0x00000000000e73d9      0x817 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_str     0x00000000000e73b5      0x817 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
                                        0xa461 (size before relaxing)
- .debug_str     0x00000000000e7bf0      0x33b Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x00000000000e7bcc      0x33b Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
                                        0xb460 (size before relaxing)
- .debug_str     0x00000000000e7f2b     0x3d6b Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_str     0x00000000000e7f07     0x3d6b Middlewares/Third_Party/LwIP/src/api/api_lib.o
                                       0xe0500 (size before relaxing)
- .debug_str     0x00000000000ebc96      0x557 Middlewares/Third_Party/LwIP/src/api/api_msg.o
+ .debug_str     0x00000000000ebc72      0x557 Middlewares/Third_Party/LwIP/src/api/api_msg.o
                                       0xdef95 (size before relaxing)
- .debug_str     0x00000000000ec1ed       0x4e Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_str     0x00000000000ec1c9       0x4e Middlewares/Third_Party/LwIP/src/api/err.o
                                       0xd92e4 (size before relaxing)
- .debug_str     0x00000000000ec23b       0xae Middlewares/Third_Party/LwIP/src/api/netbuf.o
+ .debug_str     0x00000000000ec217       0xae Middlewares/Third_Party/LwIP/src/api/netbuf.o
                                       0xd6b41 (size before relaxing)
- .debug_str     0x00000000000ec2e9     0x2e74 Middlewares/Third_Party/LwIP/src/api/sockets.o
+ .debug_str     0x00000000000ec2c5     0x2e74 Middlewares/Third_Party/LwIP/src/api/sockets.o
                                       0xe1ed2 (size before relaxing)
- .debug_str     0x00000000000ef15d      0x3a2 Middlewares/Third_Party/LwIP/src/api/tcpip.o
+ .debug_str     0x00000000000ef139      0x3a2 Middlewares/Third_Party/LwIP/src/api/tcpip.o
                                       0xddb0d (size before relaxing)
- .debug_str     0x00000000000ef4ff       0xa6 Middlewares/Third_Party/LwIP/src/core/def.o
+ .debug_str     0x00000000000ef4db       0xa6 Middlewares/Third_Party/LwIP/src/core/def.o
                                       0xd3f1a (size before relaxing)
- .debug_str     0x00000000000ef5a5      0x187 Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_str     0x00000000000ef581      0x187 Middlewares/Third_Party/LwIP/src/core/init.o
                                       0xe1d93 (size before relaxing)
- .debug_str     0x00000000000ef72c       0x2e Middlewares/Third_Party/LwIP/src/core/ip.o
+ .debug_str     0x00000000000ef708       0x2e Middlewares/Third_Party/LwIP/src/core/ip.o
                                       0xd7d76 (size before relaxing)
- .debug_str     0x00000000000ef75a      0x435 Middlewares/Third_Party/LwIP/src/core/mem.o
+ .debug_str     0x00000000000ef736      0x435 Middlewares/Third_Party/LwIP/src/core/mem.o
                                       0xd9d94 (size before relaxing)
- .debug_str     0x00000000000efb8f      0x962 Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_str     0x00000000000efb6b      0x962 Middlewares/Third_Party/LwIP/src/core/memp.o
                                       0xe28af (size before relaxing)
- .debug_str     0x00000000000f04f1      0x7a4 Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_str     0x00000000000f04cd      0x7a4 Middlewares/Third_Party/LwIP/src/core/netif.o
                                       0xdfbbc (size before relaxing)
- .debug_str     0x00000000000f0c95      0x5a8 Middlewares/Third_Party/LwIP/src/core/pbuf.o
+ .debug_str     0x00000000000f0c71      0x5a8 Middlewares/Third_Party/LwIP/src/core/pbuf.o
                                       0xdf688 (size before relaxing)
- .debug_str     0x00000000000f123d      0x50b Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_str     0x00000000000f1219      0x50b Middlewares/Third_Party/LwIP/src/core/tcp.o
                                       0xda588 (size before relaxing)
- .debug_str     0x00000000000f1748      0x30e Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_str     0x00000000000f1724      0x30e Middlewares/Third_Party/LwIP/src/core/tcp_in.o
                                       0xda276 (size before relaxing)
- .debug_str     0x00000000000f1a56      0x3fe Middlewares/Third_Party/LwIP/src/core/tcp_out.o
+ .debug_str     0x00000000000f1a32      0x3fe Middlewares/Third_Party/LwIP/src/core/tcp_out.o
                                       0xda4a1 (size before relaxing)
- .debug_str     0x00000000000f1e54      0x211 Middlewares/Third_Party/LwIP/src/core/timeouts.o
+ .debug_str     0x00000000000f1e30      0x211 Middlewares/Third_Party/LwIP/src/core/timeouts.o
                                       0xdf694 (size before relaxing)
- .debug_str     0x00000000000f2065      0x2a6 Middlewares/Third_Party/LwIP/src/core/udp.o
+ .debug_str     0x00000000000f2041      0x2a6 Middlewares/Third_Party/LwIP/src/core/udp.o
                                       0xd8b40 (size before relaxing)
- .debug_str     0x00000000000f230b      0x589 Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
+ .debug_str     0x00000000000f22e7      0x589 Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
                                       0xd83dd (size before relaxing)
- .debug_str     0x00000000000f2894      0x115 Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
+ .debug_str     0x00000000000f2870      0x115 Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
                                       0xd81cb (size before relaxing)
- .debug_str     0x00000000000f29a9      0x103 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
+ .debug_str     0x00000000000f2985      0x103 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
                                       0xda410 (size before relaxing)
- .debug_str     0x00000000000f2aac       0xb1 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
+ .debug_str     0x00000000000f2a88       0xb1 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
                                       0xd7088 (size before relaxing)
- .debug_str     0x00000000000f2b5d      0x400 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_str     0x00000000000f2b39      0x400 Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
                                       0xd85f1 (size before relaxing)
- .debug_str     0x00000000000f2f5d       0x92 Middlewares/Third_Party/LwIP/src/netif/ethernet.o
+ .debug_str     0x00000000000f2f39       0x92 Middlewares/Third_Party/LwIP/src/netif/ethernet.o
                                       0xd88f3 (size before relaxing)
- .debug_str     0x00000000000f2fef      0x1f0 Middlewares/Third_Party/LwIP/system/OS/sys_arch.o
+ .debug_str     0x00000000000f2fcb      0x1f0 Middlewares/Third_Party/LwIP/system/OS/sys_arch.o
                                       0xda01d (size before relaxing)
- .debug_str     0x00000000000f31df      0x147 evteck/app/afe_app/afe_app.o
+ .debug_str     0x00000000000f31bb      0x147 evteck/app/afe_app/afe_app.o
                                       0xcb3ed (size before relaxing)
- .debug_str     0x00000000000f3326      0x285 evteck/app/app.o
+ .debug_str     0x00000000000f3302      0x285 evteck/app/app.o
                                       0xe093c (size before relaxing)
- .debug_str     0x00000000000f35ab      0x536 evteck/app/setting/cli_app.o
+ .debug_str     0x00000000000f3587      0x536 evteck/app/setting/cli_app.o
                                       0xdc139 (size before relaxing)
- .debug_str     0x00000000000f3ae1       0xae evteck/app/setting/setting_app.o
+ .debug_str     0x00000000000f3abd       0xae evteck/app/setting/setting_app.o
                                       0xe01d2 (size before relaxing)
- .debug_str     0x00000000000f3b8f       0x52 evteck/board/board.o
+ .debug_str     0x00000000000f3b6b       0x52 evteck/board/board.o
                                       0xd118a (size before relaxing)
- .debug_str     0x00000000000f3be1       0x74 evteck/board/gpio/gpio.o
+ .debug_str     0x00000000000f3bbd       0x74 evteck/board/gpio/gpio.o
                                       0xcae76 (size before relaxing)
- .debug_str     0x00000000000f3c55       0x6a evteck/board/spi/spi.o
+ .debug_str     0x00000000000f3c31       0x6a evteck/board/spi/spi.o
                                       0xcb2c7 (size before relaxing)
- .debug_str     0x00000000000f3cbf      0x19d evteck/components/afe/afe.o
+ .debug_str     0x00000000000f3c9b      0x19d evteck/components/afe/afe.o
                                       0xce76a (size before relaxing)
- .debug_str     0x00000000000f3e5c      0x12b evteck/service/cli/cli_fifo.o
+ .debug_str     0x00000000000f3e38      0x12b evteck/service/cli/cli_fifo.o
                                        0x839e (size before relaxing)
- .debug_str     0x00000000000f3f87       0x9b evteck/service/cli/cli_retarget.o
+ .debug_str     0x00000000000f3f63       0x9b evteck/service/cli/cli_retarget.o
                                       0xcee44 (size before relaxing)
- .debug_str     0x00000000000f4022      0x1c1 evteck/service/cli/cli_shell.o
+ .debug_str     0x00000000000f3ffe      0x1c1 evteck/service/cli/cli_shell.o
                                        0xc634 (size before relaxing)
 
 .comment        0x0000000000000000       0x53

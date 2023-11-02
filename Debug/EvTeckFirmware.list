@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_ranges 00002778  00000000  00000000  00095c68  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000364fe  00000000  00000000  000983e0  2**0
+ 17 .debug_macro  00036504  00000000  00000000  000983e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00042596  00000000  00000000  000ce8de  2**0
+ 18 .debug_line   00042596  00000000  00000000  000ce8e4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000f41e3  00000000  00000000  00110e74  2**0
+ 19 .debug_str    000f41bf  00000000  00000000  00110e7a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00205057  2**0
+ 20 .comment      00000053  00000000  00000000  00205039  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000b310  00000000  00000000  002050ac  2**2
+ 21 .debug_frame  0000b310  00000000  00000000  0020508c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -13592,7 +13592,7 @@ static void low_level_init(struct netif *netif)
  8004e2c:	4b1d      	ldr	r3, [pc, #116]	; (8004ea4 <low_level_init+0x1a0>)
  8004e2e:	617b      	str	r3, [r7, #20]
   attributes.stack_size = INTERFACE_THREAD_STACK_SIZE;
- 8004e30:	f44f 73af 	mov.w	r3, #350	; 0x15e
+ 8004e30:	f44f 6380 	mov.w	r3, #1024	; 0x400
  8004e34:	62bb      	str	r3, [r7, #40]	; 0x28
   attributes.priority = osPriorityRealtime;
  8004e36:	2330      	movs	r3, #48	; 0x30

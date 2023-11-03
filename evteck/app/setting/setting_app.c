@@ -17,6 +17,8 @@
 #include "cli_retarget.h"
 #include "semphr.h"
 #include "cli_app.h"
+#include "cli_shell.h"
+extern shell_context_struct user_context;
 
 TaskHandle_t ev_tcp_server_setting_handle;
 TaskHandle_t tranmiter_handle;
@@ -41,6 +43,14 @@ static void do_retransmit(const int sock)
     char rx_buffer[128];
     int p_sock = sock;
     xTaskCreate(transmit_data,"transmit", 1024,(void*)&p_sock,configMAX_PRIORITIES, &tranmiter_handle);
+
+    shell_context_struct *context = &user_context;
+
+    context->exit = false;
+    context->printf_data_func("\r\nSHELL (build: %s)\r\n", __DATE__);
+    context->printf_data_func("Copyright (c) 2022 Technology\r\n");
+    context->printf_data_func(context->prompt);
+
     do {
         len = recv(sock, rx_buffer, sizeof(rx_buffer) - 1, 0);
         if (len < 0) {
@@ -52,7 +62,7 @@ static void do_retransmit(const int sock)
             //printf( "Received %d bytes: %s", len, rx_buffer);
             // send() can return less bytes than supplied length.
             // Walk-around for robust implementation.
-            send_tcp(sock, rx_buffer, len);
+//            send_tcp(sock, rx_buffer, len);
             for(uint16_t i =0;i<len;i++){
             	cli_app_on_data_received(rx_buffer[i]);
             	cli_app_main_loop(NULL);
@@ -125,6 +135,7 @@ static void ev_tcp_server_config_task(void *arg) {
         }
         //printf( "Socket accepted ip address: %s", addr_str);
         do_retransmit(sock);
+        close(sock);
 		vTaskDelay(1);
 	}
 CLEAN_UP:

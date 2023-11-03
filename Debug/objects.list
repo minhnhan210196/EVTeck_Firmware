@@ -130,3 +130,5 @@
 "evteck/service/cli/cli_fifo.o"
 "evteck/service/cli/cli_retarget.o"
 "evteck/service/cli/cli_shell.o"
+"evteck/service/json/cJSON.o"
+"evteck/service/json/cJSON_Utils.o"

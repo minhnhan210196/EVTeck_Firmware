@@ -105,10 +105,7 @@ void SHELL_Process(p_shell_context_t context)
     }
 
     if(first_run == 1) {
-        context->exit = false;
-        context->printf_data_func("\r\nSHELL (build: %s)\r\n", __DATE__);
-        context->printf_data_func("Copyright (c) 2022 Technology\r\n");
-        context->printf_data_func(context->prompt);
+
         first_run = 0;
     }
 

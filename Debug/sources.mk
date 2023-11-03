@@ -47,4 +47,5 @@ evteck/board/timer \
 evteck/components/afe \
 evteck/components/ate \
 evteck/service/cli \
+evteck/service/json \
 

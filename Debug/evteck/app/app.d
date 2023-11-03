@@ -92,7 +92,8 @@ evteck/app/app.o: ../evteck/app/app.c ../evteck/app/app.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/gpio/gpio.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/board.h \
- C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/afe_app/afe_app.h
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/afe_app/afe_app.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/json/cJSON.h
 
 ../evteck/app/app.h:
 
@@ -285,3 +286,5 @@ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/board.h:
 
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/afe_app/afe_app.h:
+
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/json/cJSON.h:

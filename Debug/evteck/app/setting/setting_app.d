@@ -86,7 +86,8 @@ evteck/app/setting/setting_app.o: ../evteck/app/setting/setting_app.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../evteck/app/setting/cli_app.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/cli/cli_shell.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
@@ -265,3 +266,5 @@ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/cli/cli
 ../evteck/app/setting/cli_app.h:
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/cli/cli_shell.h:

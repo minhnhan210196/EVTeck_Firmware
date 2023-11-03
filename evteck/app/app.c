@@ -24,7 +24,7 @@
 #include "afe_app.h"
 #include "main.h"
 #include <string.h>
-
+#include <cJSON.h>
 extern TIM_HandleTypeDef htim2;
 
 
@@ -34,16 +34,16 @@ extern TIM_HandleTypeDef htim2;
 TaskHandle_t ev_read_sensor_handle;
 TaskHandle_t ev_tcp_server_data_handle;
 TaskHandle_t ev_tcp_client_handle;
-QueueHandle_t ev_data_queue_handle;
 
+
+QueueHandle_t ev_data1_queue;
+QueueHandle_t ev_data2_queue;
 static void ev_read_sensor_task(void *arg);
 static void ev_tcp_server_data_task(void* arg);
 static void do_send_data(const int sock);
 
 void app_init(void) {
-	ev_data_queue_handle = xQueueCreate(1024,sizeof(float));
-	xTaskCreate(ev_read_sensor_task, "read sensor", 1024*2, NULL,
-			configMAX_PRIORITIES, &ev_read_sensor_handle);
+	cJSON_InitHooks(NULL);
 	setting_app();
 	xTaskCreate(ev_tcp_server_data_task, "tcp server_dt", 1024*2, NULL,
 			configMAX_PRIORITIES - 1, &ev_tcp_server_data_handle);
@@ -52,61 +52,71 @@ void app_init(void) {
 #define MAX_BUFF_LENGTH 1024
 
 typedef union{
-	uint8_t u8_t[4];
-	float fl_t;
+	uint32_t adc1[100];
+	uint32_t adc2[100];
 }Data_Type_t;
 
+char json_buff[4096];
+
 static void do_send_data(const int sock){
-	char buff[MAX_BUFF_LENGTH];
+	uint32_t buff[100];
 	uint16_t length = 0;
-	Data_Type_t data_sensor;
+	uint32_t data_sensor;
 	int byte_write = 0;
-	sprintf(buff,"Hello guy\r\n");
-	length = strlen(buff);
-//	while(1){
-//		// Read Data
-//		if(xQueueReceive(ev_data_queue_handle,&data_sensor.fl_t, (TickType_t) 10) == pdPASS){
-//			for(uint8_t i = 0;i<4;i++){
-//				buff[length+i] = data_sensor.u8_t[i];
-//			}
-//			length += 4;
-//		}
-//		// Send Data
-//		if(length == 1024){
-//			byte_write = send(sock,(uint8_t*)buff,length,0);
-//			// Reset buff
-//			length = 0;
-//		}
-//		// Check connect
-//		if(byte_write == -1){
-//			break;
-//		}
-//	}
-	byte_write = send(sock,(uint8_t*)buff,length,0);
+//	sprintf(buff,"Hello guy\r\n");
+//	length = strlen(buff);
+	ev_data1_queue = xQueueCreate(100,sizeof(uint32_t));
+	xTaskCreate(ev_read_sensor_task, "read sensor", 1024*2, NULL,
+			configMAX_PRIORITIES, &ev_read_sensor_handle);
+	while(1){
+		// Read Data
+		if(xQueueReceive(ev_data1_queue,&data_sensor, (TickType_t) 10) == pdPASS){
+			buff[length] = data_sensor;
+			length += 1;
+		}
+		// Send Data
+		if(length == 100){
+			memset(json_buff,0,1024);
+			size_t len = 0;
+			sprintf(json_buff,":%lu,",buff[0]);
+			len = strlen(json_buff);
+			for(uint16_t i = 1;i<length-1;i++){
+				sprintf(json_buff+len,"%lu,",buff[i]);
+				len = strlen(json_buff);
+			}
+			sprintf(json_buff+len,"%lu\r\n",buff[length-1]);
+			len = strlen(json_buff);
+			byte_write = send(sock,(uint8_t*)json_buff,len,0);
+			// Reset buff
+			length = 0;
+		}
+		// Check connect
+		if(byte_write == -1){
+			break;
+		}
+	}
+	vTaskDelete(ev_read_sensor_handle);
+	vQueueDelete(ev_data1_queue);
+//	byte_write = send(sock,(uint8_t*)buff,length,0);
 }
 
 #define NUM_MAX_SEND_QUEUE_FALSE 10
 uint32_t tick_us = 0;
 static void ev_read_sensor_task(void *arg) {
-
 	  afe_app_init();
 	  HAL_TIM_Base_Start(&htim2);
+	  uint8_t channel = 0;
 	  while(1){
 		tick_us = __HAL_TIM_GET_COUNTER(&htim2);
 		__HAL_TIM_SET_COUNTER(&htim2,0);
-		for (uint16_t i = 0; i < 300; i++) {
-			static uint8_t channel = 0;
-			uint8_t data[4] = { 0 };
-			uint8_t config = 0;
-			afe_create_config_word(channel, _110, &config);
-			afe_read(&ltc2335_1, config, data);
-			afe_convert(&ltc2335_1, data);
-			afe_read(&ltc2335_2, config, data);
-			afe_convert(&ltc2335_2, data);
-			channel++;
-			if (channel > 2)
-				channel = 0;
-		}
+		uint8_t data[4] = { 0 };
+		uint8_t config = 0;
+		afe_create_config_word(channel, _110, &config);
+		afe_read(&ltc2335_1, config, data);
+		afe_convert(&ltc2335_1, data);
+		afe_read(&ltc2335_2, config, data);
+		afe_convert(&ltc2335_2, data);
+		xQueueSend(ev_data1_queue, &ltc2335_1.data_channel[0], 10);
 		vTaskDelay(1);
 	  }
 }

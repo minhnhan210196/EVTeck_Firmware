@@ -1,5 +1,5 @@
-app.c:43:6:app_init	16	static
-app.c:59:13:do_send_data	1056	static
-app.c:90:13:ev_read_sensor_task	32	static
-app.c:115:13:ev_tcp_server_data_task	232	static
-app.c:185:6:app_read_sensor_task	24	static
+app.c:45:6:app_init	16	static
+app.c:61:13:do_send_data	448	static
+app.c:105:13:ev_read_sensor_task	32	static
+app.c:125:13:ev_tcp_server_data_task	232	static
+app.c:195:6:app_read_sensor_task	24	static

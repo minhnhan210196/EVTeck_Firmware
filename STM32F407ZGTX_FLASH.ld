@@ -146,7 +146,7 @@ SECTIONS
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */
 
-  } >RAM AT> FLASH
+  } >CCMRAM AT> FLASH
 
   _siccmram = LOADADDR(.ccmram);
 
@@ -192,7 +192,7 @@ SECTIONS
     . = . + _Min_Heap_Size;
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
-  } >RAM
+  } >CCMRAM
 
   /* Remove information from the compiler libraries */
   /DISCARD/ :

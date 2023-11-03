@@ -9,6 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include evteck/service/json/subdir.mk
 -include evteck/service/cli/subdir.mk
 -include evteck/components/ate/subdir.mk
 -include evteck/components/afe/subdir.mk

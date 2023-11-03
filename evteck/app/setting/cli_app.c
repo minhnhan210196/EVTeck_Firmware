@@ -47,7 +47,7 @@ static int32_t cli_reset_system(p_shell_context_t context, int32_t argc,
 static const shell_command_context_t cli_command_table[] = {
 		{ "reset","\"reset\": reset system\r\n", cli_reset_system, 0 },
 };
-static shell_context_struct user_context;
+shell_context_struct user_context;
 
 /********************** Exported Function Definitions *************************/
 

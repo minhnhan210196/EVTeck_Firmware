@@ -25,6 +25,8 @@
 #include "main.h"
 #include <string.h>
 #include <cJSON.h>
+#include "ota_app.h"
+
 extern TIM_HandleTypeDef htim2;
 
 
@@ -45,6 +47,7 @@ static void do_send_data(const int sock);
 void app_init(void) {
 	cJSON_InitHooks(NULL);
 	setting_app();
+	ota_app_init();
 	xTaskCreate(ev_tcp_server_data_task, "tcp server_dt", 1024*2, NULL,
 			configMAX_PRIORITIES - 1, &ev_tcp_server_data_handle);
 }
@@ -56,35 +59,37 @@ typedef union{
 	uint32_t adc2[100];
 }Data_Type_t;
 
-char json_buff[4096];
+char json_buff[16384];
+
+#define MAX_POINT 20
 
 static void do_send_data(const int sock){
-	uint32_t buff[100];
+	float buff[MAX_POINT];
 	uint16_t length = 0;
-	uint32_t data_sensor;
+	float data_sensor;
 	int byte_write = 0;
 //	sprintf(buff,"Hello guy\r\n");
 //	length = strlen(buff);
-	ev_data1_queue = xQueueCreate(100,sizeof(uint32_t));
+	ev_data1_queue = xQueueCreate(100,sizeof(float));
 	xTaskCreate(ev_read_sensor_task, "read sensor", 1024*2, NULL,
 			configMAX_PRIORITIES, &ev_read_sensor_handle);
 	while(1){
 		// Read Data
-		if(xQueueReceive(ev_data1_queue,&data_sensor, (TickType_t) 10) == pdPASS){
+		if(xQueueReceive(ev_data1_queue,&data_sensor, (TickType_t) 1) == pdPASS){
 			buff[length] = data_sensor;
 			length += 1;
 		}
 		// Send Data
-		if(length == 100){
+		if(length == MAX_POINT){
 			memset(json_buff,0,1024);
 			size_t len = 0;
-			sprintf(json_buff,":%lu,",buff[0]);
+			sprintf(json_buff,":,%f,",buff[0]);
 			len = strlen(json_buff);
 			for(uint16_t i = 1;i<length-1;i++){
-				sprintf(json_buff+len,"%lu,",buff[i]);
+				sprintf(json_buff+len,"%f,",buff[i]);
 				len = strlen(json_buff);
 			}
-			sprintf(json_buff+len,"%lu\r\n",buff[length-1]);
+			sprintf(json_buff+len,"%f,\r\n",buff[length-1]);
 			len = strlen(json_buff);
 			byte_write = send(sock,(uint8_t*)json_buff,len,0);
 			// Reset buff
@@ -116,8 +121,7 @@ static void ev_read_sensor_task(void *arg) {
 		afe_convert(&ltc2335_1, data);
 		afe_read(&ltc2335_2, config, data);
 		afe_convert(&ltc2335_2, data);
-		xQueueSend(ev_data1_queue, &ltc2335_1.data_channel[0], 10);
-		vTaskDelay(1);
+		xQueueSend(ev_data1_queue, &ltc2335_1.dataf_channel[0], 1);
 	  }
 }
 

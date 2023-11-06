@@ -15,7 +15,51 @@
 #define CHANNEL_MASK 0b111000 // 0x38
 #define DATA_MASK 0b111111111111111111000000 // 0xFFFF00
 
-
+static int afe_sign_extend_17(uint32_t data){
+	  uint8_t sign;
+	  uint32_t mask = 0x20000;
+	  int32_t data_signed = data;
+	  sign = (data & mask) >> 17;
+	  if (sign)
+	    data_signed = data_signed | 0xFFFC0000;
+	  return data_signed;
+}
+float afe_caculator_vol(uint32_t data,AFE_SoftSpan_Code_t softspan){
+	  float voltage;
+	  int32_t data_signed;
+	  switch (softspan)
+	  {
+	    case 0:
+	      voltage = 0;
+	      break;   // Disable Channel
+	    case 1:
+	      voltage = (float)data * (1.25 * VREF / 1.000) / POW2_18;
+	      break;
+	    case 2:
+	      data_signed = afe_sign_extend_17(data);
+	      voltage = (float)data_signed * (1.25 * VREF / 1.024) / POW2_17;
+	      break;
+	    case 3:
+	      data_signed = afe_sign_extend_17(data);
+	      voltage = (float)data_signed * (1.25 * VREF / 1.000) / POW2_17;
+	      break;
+	    case 4:
+	      voltage = (float)data * (2.50 * VREF / 1.024) / POW2_18;
+	      break;
+	    case 5:
+	      voltage = (float)data * (2.50 * VREF / 1.000) / POW2_18;
+	      break;
+	    case 6:
+	      data_signed = afe_sign_extend_17(data);
+	      voltage = (float)data_signed * (2.50 * VREF / 1.024) / POW2_17;
+	      break;
+	    case 7:
+	      data_signed = afe_sign_extend_17(data);
+	      voltage = (float)data_signed * (2.50 * VREF ) / POW2_17;
+	      break;
+	  }
+	  return voltage;
+}
 int afe_init(AFE *afe){
 
 	for(uint16_t i = 0;i<8;i++){
@@ -85,6 +129,7 @@ int afe_convert(AFE *afe,uint8_t data[4]){
 	  afe->data_type.channel = (data32 & CHANNEL_MASK) >> 3;
 	  afe->data_type.value = (data32 & DATA_MASK) >> 6;
 	  afe->data_channel[afe->data_type.channel] = afe->data_type.value;
+	  afe->dataf_channel[afe->data_type.channel] = 	  afe_caculator_vol(afe->data_type.value, _111);
 	  return 0;
 }
 void LTC23XX_create_config_word(uint8_t channel, uint8_t config_number, uint8_t *config_word)

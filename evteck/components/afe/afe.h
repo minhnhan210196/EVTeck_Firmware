@@ -11,13 +11,14 @@
 #include "stdint.h"
 #include "gpio.h"
 #include "spi.h"
-#define VREF 4.096
+#define VREF 4.096 // 4.096V
 #define POW2_18 262144
 #define POW2_17 131072
 
 #define CHANNEL_NUMBER 0x38
 #define SOFTSPAN 0x07
-
+#define FULL_SCALE 20.48 // 20.48V
+#define LBS        0.000078125 // V
 #define SNEAKER_PORT_I2C_ADDRESS 0x20
 
 typedef enum{
@@ -44,7 +45,7 @@ struct AFE_t{
 	BSP_GPIO *busy;
 
 	uint32_t data_channel[8];
-
+	float 	 dataf_channel[8];
 	struct data_type_t{
 		uint8_t channel;
 		uint8_t softSpan;
@@ -67,7 +68,7 @@ int afe_read(AFE *afe,uint8_t config_word,uint8_t data_array[24]);
 int afe_read_all(AFE *afe);
 uint8_t afe_create_config_word(uint8_t channel,AFE_SoftSpan_Code_t softspan,uint8_t *configword);
 int afe_convert(AFE *afe,uint8_t data[4]);
-
+float afe_caculator_vol(uint32_t data,AFE_SoftSpan_Code_t softspan);
 static inline uint32_t LTC23XX_get_data_channel(AFE *afe,uint8_t p_channel){
 	return afe->data_channel[p_channel];
 }

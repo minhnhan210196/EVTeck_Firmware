@@ -9,6 +9,7 @@ S_SRCS :=
 C_SRCS := 
 S_UPPER_SRCS := 
 O_SRCS := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 OBJDUMP_LIST := 
 EXECUTABLES := 
@@ -39,8 +40,11 @@ Middlewares/Third_Party/LwIP/src/netif/ppp \
 Middlewares/Third_Party/LwIP/system/OS \
 evteck/app/afe_app \
 evteck/app \
+evteck/app/mqtt \
+evteck/app/ota_app \
 evteck/app/setting \
 evteck/board \
+evteck/board/flash \
 evteck/board/gpio \
 evteck/board/spi \
 evteck/board/timer \

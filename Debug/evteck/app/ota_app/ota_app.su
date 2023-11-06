@@ -1,0 +1,4 @@
+ota_app.c:34:6:ota_app_init	16	static
+ota_app.c:41:13:ota_process	232	static
+ota_app.c:111:13:do_retransmit	160	static
+ota_app.c:163:13:write_flag	16	static

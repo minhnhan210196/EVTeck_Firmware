@@ -16,8 +16,11 @@ RM := rm -rf
 -include evteck/board/timer/subdir.mk
 -include evteck/board/spi/subdir.mk
 -include evteck/board/gpio/subdir.mk
+-include evteck/board/flash/subdir.mk
 -include evteck/board/subdir.mk
 -include evteck/app/setting/subdir.mk
+-include evteck/app/ota_app/subdir.mk
+-include evteck/app/mqtt/subdir.mk
 -include evteck/app/afe_app/subdir.mk
 -include evteck/app/subdir.mk
 -include Middlewares/Third_Party/LwIP/system/OS/subdir.mk
@@ -75,6 +78,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 EvTeckFirmware.list \
 
+OBJCOPY_HEX += \
+EvTeckFirmware.hex \
+
 OBJCOPY_BIN += \
 EvTeckFirmware.bin \
 
@@ -87,7 +93,7 @@ main-build: EvTeckFirmware.elf secondary-outputs
 
 # Tool invocations
 EvTeckFirmware.elf: $(OBJS) $(USER_OBJS) C:\Users\MinhNhan\STM32CubeIDE\myWorkspace\EvTeckFirmware\STM32F407ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "EvTeckFirmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\MinhNhan\STM32CubeIDE\myWorkspace\EvTeckFirmware\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EvTeckFirmware.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "EvTeckFirmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\MinhNhan\STM32CubeIDE\myWorkspace\EvTeckFirmware\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EvTeckFirmware.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -101,6 +107,11 @@ EvTeckFirmware.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+EvTeckFirmware.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "EvTeckFirmware.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 EvTeckFirmware.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "EvTeckFirmware.bin"
 	@echo 'Finished building: $@'
@@ -111,7 +122,7 @@ clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

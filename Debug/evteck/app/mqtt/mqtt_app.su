@@ -1,5 +1,6 @@
-mqtt_app.c:29:1:mqtt_incoming_data_cb	32	static
-mqtt_app.c:39:1:mqtt_incoming_publish_cb	32	static
-mqtt_app.c:48:1:mqtt_request_cb	24	static
-mqtt_app.c:56:1:mqtt_connection_cb	40	static
-mqtt_app.c:75:6:mqtt_app_init	16	static
+mqtt_app.c:35:1:mqtt_incoming_data_cb	32	static
+mqtt_app.c:45:1:mqtt_incoming_publish_cb	32	static
+mqtt_app.c:54:1:mqtt_request_cb	24	static
+mqtt_app.c:62:1:mqtt_connection_cb	40	static
+mqtt_app.c:85:6:mqtt_app_init	24	static
+mqtt_app.c:100:13:mqtt_task_pub	32	static

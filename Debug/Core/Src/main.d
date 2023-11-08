@@ -69,6 +69,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/etharp.h \
  ../Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/udp.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h \
  ../Middlewares/Third_Party/LwIP/system/arch/sys_arch.h \
@@ -77,7 +82,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/board.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/gpio/gpio.h \
- C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app.h
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/dns.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/mqtt/mqtt_app.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/apps/mqtt.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/apps/mqtt_opts.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/iana.h
 
 ../Core/Inc/main.h:
 
@@ -221,6 +231,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:
 
+../Middlewares/Third_Party/LwIP/src/include/lwip/udp.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
+
 ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:
@@ -238,3 +258,13 @@ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/gpio/gpio.h:
 
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/dns.h:
+
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/mqtt/mqtt_app.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/apps/mqtt.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/apps/mqtt_opts.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/iana.h:

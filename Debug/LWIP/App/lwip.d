@@ -57,6 +57,11 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/etharp.h \
  ../Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/udp.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h \
  ../Middlewares/Third_Party/LwIP/system/arch/sys_arch.h \
@@ -73,7 +78,8 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../LWIP/Target/ethernetif.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/init.h
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/init.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h
 
 ../LWIP/App/lwip.h:
 
@@ -195,6 +201,16 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:
 
+../Middlewares/Third_Party/LwIP/src/include/lwip/udp.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
+
 ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:
@@ -228,3 +244,5 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/init.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:

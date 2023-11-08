@@ -61,7 +61,7 @@ typedef union{
 
 char json_buff[16384];
 
-#define MAX_POINT 20
+#define MAX_POINT 100
 
 static void do_send_data(const int sock){
 	float buff[MAX_POINT];

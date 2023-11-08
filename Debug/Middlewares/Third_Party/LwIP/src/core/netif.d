@@ -82,7 +82,8 @@ Middlewares/Third_Party/LwIP/src/core/netif.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h
+ ../Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 
@@ -251,3 +252,5 @@ Middlewares/Third_Party/LwIP/src/core/netif.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h:
+
+../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:

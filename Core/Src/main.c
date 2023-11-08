@@ -27,6 +27,8 @@
 #include "board.h"
 #include "app.h"
 #include <string.h>
+#include <dns.h>
+#include <mqtt_app.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -435,6 +437,19 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+extern struct netif gnetif;
+union ip_type{
+	uint8_t ip_u8_t[4];
+	uint32_t ip_u32_t;
+};
+
+union ip_type my_ip;
+
+void dns_callback(const char *name, const ip_addr_t *ipaddr, void *callback_arg){
+	union ip_type mqtt_ip;
+	mqtt_ip.ip_u32_t = ipaddr->addr;
+	mqtt_app_init(mqtt_ip.ip_u8_t);
+}
 
 /* USER CODE END 4 */
 
@@ -451,9 +466,17 @@ void StartDefaultTask(void *argument)
   MX_LWIP_Init();
   /* USER CODE BEGIN 5 */
   app_init();
+  while(gnetif.ip_addr.addr == 0){
+	  osDelay(1);
+  }
+  my_ip.ip_u32_t = gnetif.ip_addr.addr;
+//  dns_init();
+//  ip_addr_t addr;
+//  dns_gethostbyname("hub.dev.selex.vn",&addr,dns_callback,NULL);
   /* Infinite loop */
   for(;;)
   {
+
     osDelay(1);
   }
   /* USER CODE END 5 */

@@ -2,5 +2,5 @@ flash.c:11:6:flash_open	8	static
 flash.c:14:6:flash_close	8	static
 flash.c:17:5:flash_erase	40	static
 flash.c:29:5:flash_write	32	static
-flash.c:35:5:flash_read	24	static
-flash.c:39:9:flash_get_sector	24	static
+flash.c:38:5:flash_read	24	static
+flash.c:42:9:flash_get_sector	24	static

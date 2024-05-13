@@ -31,6 +31,7 @@ evteck/app/afe_app/afe_app.o: ../evteck/app/afe_app/afe_app.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/board.h
 
@@ -99,6 +100,8 @@ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/gpio/gpio
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/spi/spi.h:
 

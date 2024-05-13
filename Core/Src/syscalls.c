@@ -31,7 +31,7 @@
 #include <sys/time.h>
 #include <sys/times.h>
 
-
+#include "main.h"
 /* Variables */
 extern int __io_putchar(int ch) __attribute__((weak));
 extern int __io_getchar(void) __attribute__((weak));
@@ -77,12 +77,14 @@ return len;
 
 __attribute__((weak)) int _write(int file, char *ptr, int len)
 {
-	int DataIdx;
-
-	for (DataIdx = 0; DataIdx < len; DataIdx++)
-	{
-		__io_putchar(*ptr++);
-	}
+//	int DataIdx;
+//
+//	for (DataIdx = 0; DataIdx < len; DataIdx++)
+//	{
+//		__io_putchar(*ptr++);
+//	}
+	extern UART_HandleTypeDef huart1;
+	if(file == 1) HAL_UART_Transmit(&huart1,(uint8_t*) ptr,len,1000);
 	return len;
 }
 

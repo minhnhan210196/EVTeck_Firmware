@@ -27,8 +27,11 @@ int flash_erase(uint32_t sector_addr, uint32_t num_sector) {
 	return 0;
 }
 int flash_write(uint32_t addr, uint8_t *data, uint32_t len) {
-	for (uint32_t i = 0; i < len; i++) {
-		HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE, addr + i, data[i]);
+	for (uint32_t i = 0; i < len; i+=4) {
+		uint32_t buff = ((uint32_t)data[i+3] << 24) | ((uint32_t)data[i+2] << 16) | ((uint32_t)data[i+1] << 8) | (data[i]);
+		if(HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, addr + i,buff) != HAL_OK){
+			return -1;
+		}
 	}
 	return 0;
 }

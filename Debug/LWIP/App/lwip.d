@@ -30,6 +30,7 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h \
  ../Middlewares/Third_Party/LwIP/system/arch/cc.h \
@@ -78,8 +79,7 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../LWIP/Target/ethernetif.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/init.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/init.h
 
 ../LWIP/App/lwip.h:
 
@@ -146,6 +146,8 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:
 
@@ -244,5 +246,3 @@ LWIP/App/lwip.o: ../LWIP/App/lwip.c ../LWIP/App/lwip.h \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/init.h:
-
-../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:

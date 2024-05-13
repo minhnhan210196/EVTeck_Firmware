@@ -1,0 +1,9 @@
+/Core/
+/Drivers/
+/LWIP/
+/Middlewares/
+/evteck/
+/makefile
+/objects.list
+/objects.mk
+/sources.mk

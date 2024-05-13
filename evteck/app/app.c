@@ -44,7 +44,7 @@ void app_init(void)
 {
 	cJSON_InitHooks(NULL);
 	setting_app();
-	ota_app_init();
+//	ota_app_init();
 	xTaskCreate(ev_tcp_server_data_task, "tcp server_dt", 1024 * 2, NULL,
 				configMAX_PRIORITIES - 1, &ev_tcp_server_data_handle);
 }
@@ -83,8 +83,6 @@ static void do_send_data(const int sock)
 			length += 1;
 		}
 		// Send Data
-
-
 		if (length == MAX_POINT)
 		{
 			memset(json_buff, 0, 8192);
@@ -122,13 +120,11 @@ uint32_t tick_us = 0;
 static void ev_read_sensor_task(void *arg)
 {
 	afe_app_init();
-	HAL_TIM_Base_Start(&htim2);
+	Data_Type_t data_adc;
 	while (1)
 	{
 		for (uint8_t i = 0; i < 3; i++)
 		{
-			tick_us = __HAL_TIM_GET_COUNTER(&htim2);
-			__HAL_TIM_SET_COUNTER(&htim2, 0);
 			uint8_t data[4] = {0};
 			uint8_t config = 0;
 			afe_create_config_word(i, _111, &config);
@@ -136,15 +132,10 @@ static void ev_read_sensor_task(void *arg)
 			afe_convert(&ltc2335_1, data);
 			afe_read(&ltc2335_2, config, data);
 			afe_convert(&ltc2335_2, data);
+			data_adc.adc[i] = ltc2335_1.dataf_channel[i];
+			data_adc.adc[i + 3] = ltc2335_2.dataf_channel[i];
 		}
-		Data_Type_t data;
-
-		for (uint16_t i = 0; i < 3; i++)
-		{
-			data.adc[i] = ltc2335_1.dataf_channel[i];
-			data.adc[i + 3] = ltc2335_2.dataf_channel[i];
-		}
-		xQueueSend(ev_data_queue, &data,
+		xQueueSend(ev_data_queue, &data_adc,
 				   1);
 	}
 }

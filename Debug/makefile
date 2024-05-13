@@ -11,6 +11,7 @@ RM := rm -rf
 -include sources.mk
 -include evteck/service/json/subdir.mk
 -include evteck/service/cli/subdir.mk
+-include evteck/service/bootloader/subdir.mk
 -include evteck/components/ate/subdir.mk
 -include evteck/components/afe/subdir.mk
 -include evteck/board/timer/subdir.mk

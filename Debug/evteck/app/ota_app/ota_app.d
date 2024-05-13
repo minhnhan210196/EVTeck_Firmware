@@ -45,6 +45,7 @@ evteck/app/ota_app/ota_app.o: ../evteck/app/ota_app/ota_app.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h \
  ../Middlewares/Third_Party/LwIP/system/arch/cc.h \
@@ -91,7 +92,8 @@ evteck/app/ota_app/ota_app.o: ../evteck/app/ota_app/ota_app.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/err.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/sockets.h \
  C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app_config.h \
- C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/flash/flash.h
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/flash/flash.h \
+ C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/bootloader/bootloader.h
 
 ../evteck/app/ota_app/ota_app.h:
 
@@ -187,6 +189,8 @@ evteck/app/ota_app/ota_app.o: ../evteck/app/ota_app/ota_app.c \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+
 ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:
@@ -280,3 +284,5 @@ evteck/app/ota_app/ota_app.o: ../evteck/app/ota_app/ota_app.c \
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/app/app_config.h:
 
 C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/board/flash/flash.h:
+
+C:/Users/MinhNhan/STM32CubeIDE/myWorkspace/EvTeckFirmware/evteck/service/bootloader/bootloader.h:

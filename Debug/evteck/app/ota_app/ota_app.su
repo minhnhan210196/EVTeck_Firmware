@@ -1,4 +1,5 @@
-ota_app.c:34:6:ota_app_init	16	static
-ota_app.c:41:13:ota_process	232	static
-ota_app.c:111:13:do_retransmit	160	static
-ota_app.c:163:13:write_flag	16	static
+core_cm4.h:1939:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+ota_app.c:55:6:ota_app_init	16	static
+ota_app.c:63:13:ota_process	232	static
+ota_app.c:138:13:do_retransmit	160	static
+ota_app.c:220:16:crc8	32	static

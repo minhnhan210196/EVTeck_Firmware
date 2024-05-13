@@ -50,6 +50,7 @@ evteck/board/spi \
 evteck/board/timer \
 evteck/components/afe \
 evteck/components/ate \
+evteck/service/bootloader \
 evteck/service/cli \
 evteck/service/json \
 

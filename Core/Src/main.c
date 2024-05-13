@@ -29,6 +29,8 @@
 #include <string.h>
 #include <dns.h>
 #include <mqtt_app.h>
+#include <flash/flash.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,6 +55,8 @@ DMA_HandleTypeDef hdma_spi1_tx;
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 
+UART_HandleTypeDef huart1;
+
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
@@ -61,7 +65,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -71,6 +74,7 @@ static void MX_DMA_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_USART1_UART_Init(void);
 void StartDefaultTask(void *argument);
 
 /* USER CODE BEGIN PFP */
@@ -79,6 +83,18 @@ void StartDefaultTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void mg_random(void *buf, size_t len) {  // Use on-board RNG
+  for (size_t n = 0; n < len; n += sizeof(uint32_t)) {
+    uint32_t r = (uint32_t)rand();
+    memcpy((char *) buf + n, &r, n + sizeof(r) > len ? len - n : sizeof(r));
+  }
+}
+uint64_t mg_millis(void) {
+  return HAL_GetTick();
+}
+//bool mgos_lwip_if_get_ip_info(const struct netif *nif,
+//                              const char *dns_override,
+//                              struct mgos_net_ip_info *ip_info);
 
 /* USER CODE END 0 */
 
@@ -114,10 +130,10 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim1);
   board_init();
-
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -339,6 +355,39 @@ static void MX_TIM2_Init(void)
 }
 
 /**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
   * Enable DMA controller clock
   */
 static void MX_DMA_Init(void)
@@ -450,7 +499,6 @@ void dns_callback(const char *name, const ip_addr_t *ipaddr, void *callback_arg)
 	mqtt_ip.ip_u32_t = ipaddr->addr;
 	mqtt_app_init(mqtt_ip.ip_u8_t);
 }
-
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -466,17 +514,17 @@ void StartDefaultTask(void *argument)
   MX_LWIP_Init();
   /* USER CODE BEGIN 5 */
   app_init();
-  while(gnetif.ip_addr.addr == 0){
-	  osDelay(1);
-  }
-  my_ip.ip_u32_t = gnetif.ip_addr.addr;
+  while(ip4_addr_isany_val(*netif_ip4_addr(&gnetif)))
+	  osDelay(200); // CMSIS-RTOS v1 uses milliseconds
+
 //  dns_init();
 //  ip_addr_t addr;
 //  dns_gethostbyname("hub.dev.selex.vn",&addr,dns_callback,NULL);
-  /* Infinite loop */
+//  /* Infinite loop */
+
+  osThreadExit();
   for(;;)
   {
-
     osDelay(1);
   }
   /* USER CODE END 5 */

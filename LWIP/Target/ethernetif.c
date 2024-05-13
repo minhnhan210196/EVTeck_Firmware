@@ -31,7 +31,7 @@
 #include "lwip/tcpip.h"
 /* Within 'USER CODE' section, code will be kept by default at each generation */
 /* USER CODE BEGIN 0 */
-
+#include "hal.h"
 /* USER CODE END 0 */
 
 /* Private define ------------------------------------------------------------*/
